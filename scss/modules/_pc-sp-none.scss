@@ -1,0 +1,23 @@
+/*
+===============
+sp-pc display: none;
+===============
+*/
+@use "../modules/responsive" as rps;
+
+.sp {
+  display: block !important;
+}
+
+.pc {
+  display: none !important;
+}
+
+@include rps.rps-sw(pc) {
+  .sp {
+    display: none !important;
+  }
+  .pc {
+    display: block !important;
+  }
+}

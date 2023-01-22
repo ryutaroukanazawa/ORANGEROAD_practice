@@ -1,0 +1,147 @@
+@use '../../bases/variables' as vb;
+@use '../../modules/index' as md;
+
+.link {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    .link-box {
+        padding: md.vw-sp(45) 0 md.vw-sp(45);
+
+        .link-ytlogo {
+            width: md.vw-sp(230);
+            padding-bottom: md.vw-sp(18);
+        }
+    }
+    
+    .link-box:nth-child(2) {
+        @include md.bg-img('/img/top-link-importcar.png');
+        height: md.vw-sp(240);
+        padding-top: md.vw-sp(67);
+        position: relative;
+        
+        .link-box-text-lg {
+            padding-bottom: md.vw-sp(6);
+            white-space: nowrap;
+        }
+        
+        .link-box-under {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            @include md.fl-center(xy);
+            gap: md.vw-sp(12);
+            padding: md.vw-sp(19) 0;
+        }
+    }
+
+    .link-box:nth-child(3) {
+        @include md.bg-img('/img/top-link-pikecar.png');
+        height: md.vw-sp(240);
+        padding-top: md.vw-sp(67);
+        position: relative;
+        
+        .link-box-text-lg {
+            padding-bottom: md.vw-sp(6);
+        }
+        
+        .link-box-under {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            @include md.fl-center(xy);
+            gap: md.vw-sp(12);
+            padding: md.vw-sp(19) 0;
+        }
+    }
+}
+
+@include md.rps-sw(pc) {
+    .link {
+        flex-direction: row;
+        gap: md.vw-pc(6);
+        height: md.vw-pc(370);
+    
+        .link-box {
+            padding: md.vw-pc(128) md.vw-pc(109) md.vw-pc(128) md.vw-pc(121);
+    
+            .link-ytlogo {
+                width: md.vw-pc(320);
+                padding-bottom: md.vw-pc(18);
+            }
+        }
+        
+        .link-box:nth-child(2) {
+            height: 100%;
+            width: md.vw-pc(438);
+            padding-top: md.vw-pc(141);
+            
+            .link-box-text-lg {
+                padding-bottom: md.vw-pc(2);
+            }
+            
+            .link-box-under {
+                left: 0;
+                gap: md.vw-pc(13);
+                padding: md.vw-pc(10) 0;
+            }
+        }
+    
+        .link-box:nth-child(3) {
+            height: 100%;
+            width: md.vw-pc(438);
+            padding-top: md.vw-pc(141);
+            
+            .link-box-text-lg {
+                padding-bottom: md.vw-pc(2);
+            }
+            
+            .link-box-under {
+                left: 0;
+                gap: md.vw-pc(13);
+                padding: md.vw-pc(10) 0;
+            }
+        }
+    }
+}
+
+/*---font---*/
+.link-box-text-md {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(16), 700, md.vw-sp(22), 0.08em);
+  }
+  
+  .link-box-text-lg {
+    @include md.fontset(md.vw-sp(25), 700, md.vw-sp(30), 0.04em);
+  }
+  
+  .link-box-text-sm {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(16), 600, md.vw-sp(22), 0.06em);
+  }
+  
+  .link-box-under-text {
+    @include md.fontset(md.vw-sp(20), 700, md.vw-sp(24), 0.08em);
+  }
+  
+  @include md.rps-sw(pc) {
+    .link-box-text-md {
+      @include md.fontset(md.vw-pc(20), 700, md.vw-pc(27), 0.08em);
+    }
+    
+    .link-box-text-lg {
+      @include md.fontset(md.vw-pc(28), 700, md.vw-pc(34), 0.04em);
+    }
+    
+    .link-box-text-sm {
+      @include md.fontset(md.vw-pc(14), 600, md.vw-pc(19), 0.06em);
+    }
+    
+    .link-box-under-text {
+      @include md.fontset(md.vw-pc(20), 700, md.vw-pc(24), 0.08em);
+    }
+  }

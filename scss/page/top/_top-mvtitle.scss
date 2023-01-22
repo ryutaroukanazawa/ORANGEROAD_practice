@@ -1,0 +1,24 @@
+@use '../../bases/variables' as vb;
+@use '../../modules/index' as md;
+
+.mvtitle {
+    white-space: nowrap;
+    padding: md.vw-sp(30) 0;
+}
+
+@include md.rps-sw(pc) {
+    .mvtitle {
+        padding: md.vw-pc(100) 0;
+    }
+}
+
+/*---font---*/
+.mvtitle-text {
+    @include md.fontset(md.vw-sp(70), 700, md.vw-sp(85), 0.04em);
+  }
+  
+  @include md.rps-sw(pc) {
+    .mvtitle-text {
+      @include md.fontset(md.vw-pc(140), 700, md.vw-pc(177), 0.04em);
+    }
+  }

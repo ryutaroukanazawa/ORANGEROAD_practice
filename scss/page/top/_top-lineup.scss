@@ -1,0 +1,176 @@
+@use '../../bases/variables' as vb;
+@use '../../modules/index' as md;
+
+.lu {
+    @include md.bg-img('/img/top-lineup-bgi.png');
+    width: 100%;
+    margin-top: 100vh; //あとでheaderの高さ分少なくする
+    padding: 0 md.vw-sp(27);
+    text-align: center;
+
+    .section-title {
+        padding: md.rem(50) 0 md.rem(13);
+        text-align: left;
+    }
+
+    .lu-container {
+        width: 100%;
+
+        .lu-carlist {
+            padding-bottom: md.rem(77);
+
+            .lu-carlist-text {
+                display: flex;
+
+                .lu-carlist-title {
+                    margin-right: md.vw-sp(25);
+                }
+
+                .lu-carlist-title-jp {
+                    padding-top: md.vw-sp(9);
+                }
+            }
+
+            .lu-carlist-img {
+                display: flex;
+                flex-direction: column;
+                gap: md.vw-sp(36);
+                margin-top: md.vw-sp(46);
+                margin-bottom: md.vw-sp(40);
+
+
+                .lu-carlist-img-bg {
+                    width: md.vw-sp(200);
+                    height: md.vw-sp(280);
+                    margin: 0 auto;
+                    position: relative;
+
+                    .lu-car-img {
+                        position: absolute;
+                        @include md.ps-center(xy);
+                        top: 45%;
+                        width: 70vw;
+                    }
+
+                    .lu-carlist-img-title {
+                        white-space: nowrap;
+                        position: absolute;
+                        @include md.ps-center(x);
+                        bottom: md.vw-sp(16);
+
+                        .lu-carlist-img-name {
+                            text-align: left;
+                            padding-bottom: md.vw-sp(5);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include md.rps-sw(pc) {
+    .lu {
+        padding: 0 md.vw-pc(118);
+    
+        .section-title {
+            padding: md.rem(101) 0 md.rem(66);
+            text-align: left;
+        }
+    
+        .lu-container {
+            width: 100%;
+            padding: 0 md.vw-pc(195-118);
+    
+            .lu-carlist {
+                padding-bottom: md.rem(77);
+    
+                .lu-carlist-text {
+                    display: flex;
+    
+                    .lu-carlist-title {
+                        margin-right: md.vw-pc(18);
+                    }
+    
+                    .lu-carlist-title-jp {
+                        padding-top: md.vw-pc(20);
+                    }
+
+                    .viewmore-text {
+                        margin-right: 0;
+                    }
+                }
+    
+                .lu-carlist-img {
+                    flex-direction: row;
+                    justify-content: space-between;
+                    gap: md.vw-pc(165);
+                    margin-top: md.vw-pc(41);
+                    margin-bottom: md.vw-pc(40);
+    
+                    .lu-carlist-img-bg {
+                        width: md.vw-pc(240);
+                        height: md.vw-pc(320);
+                        margin: 0 auto;
+                        position: relative;
+    
+                        .lu-car-img {
+                            position: absolute;
+                            @include md.ps-center(xy);
+                            top: 45%;
+                            width: 23vw;
+                        }
+    
+                        .lu-carlist-img-title {
+                            white-space: nowrap;
+                            position: absolute;
+                            left: 30%;
+                            bottom: md.vw-pc(25);
+    
+                            .lu-carlist-img-name {
+                                text-align: left;
+                                padding-bottom: md.vw-pc(5);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*---font---*/
+.lu-carlist-title {
+    @include md.fontset(md.vw-sp(25), 700, md.vw-sp(30), 0.04em);
+  }
+  
+  .lu-carlist-title-jp {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(12), 600, md.vw-sp(16), 0.06em);
+  }
+  
+  .lu-carlist-img-name {
+    @include md.fontset(md.vw-sp(25), 700, md.vw-sp(30), 0.04em);
+  }
+  
+  .lu-carlist-img-text {
+    @include md.fontset(md.vw-sp(16), 700, md.vw-sp(20), 0.04em);
+  }
+  
+  @include md.rps-sw(pc) {
+    .lu-carlist-title {
+      @include md.fontset(md.vw-pc(40), 700, md.vw-pc(49), 0.04em);
+    }
+    
+    .lu-carlist-title-jp {
+      @include md.fontset(md.vw-pc(14), 600, md.vw-pc(19), 0.06em);
+    }
+    
+    .lu-carlist-img-name {
+      @include md.fontset(md.vw-pc(28), 700, md.vw-pc(34), 0.04em);
+    }
+    
+    .lu-carlist-img-text {
+      @include md.fontset(md.vw-pc(14), 700, md.vw-pc(17), 0.04em);
+    }
+  }

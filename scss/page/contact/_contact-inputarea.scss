@@ -1,0 +1,105 @@
+@use '../../bases/variables' as vb;
+@use '../../modules/index' as md;
+
+.inputarea {
+    width: 100%;
+    padding: 0 md.vw-sp(27) md.vw-sp(80);
+    display: grid;
+    gap: md.vw-sp(23);
+
+    .info-input {
+        padding-top: md.vw-sp(20);
+        
+        .info-input-title {
+            padding-bottom: md.vw-sp(7);
+        }
+
+        .info-input-textbox {
+            width: 100%;
+            height: md.vw-sp(60);
+            background-color: vb.$beige-color;
+        }
+    
+        .info-input-textboxarea {
+            width: 100%;
+            height: md.vw-sp(160);
+            background-color: vb.$beige-color;
+        }
+    }
+
+    .info-sendbox {
+        padding-top: md.vw-sp(50);
+
+        .viewmore-text {
+            width: md.vw-sp(150);
+        }
+    }
+}
+
+/*---PC-Layout---*/
+@include md.rps-sw(pc) {
+    .inputarea {
+        padding: 0 md.vw-pc(230) md.vw-pc(120);
+        gap: md.vw-pc(30);
+    
+        .info-input {
+            padding-top: md.vw-pc(20);
+            display: flex;
+            align-items: center;
+            gap: md.vw-pc(57);
+            
+            .info-input-title {
+                padding-bottom: md.vw-pc(7);
+                width: md.vw-pc(250);
+            }
+    
+            .info-input-textbox {
+                width: md.vw-pc(660);
+                height: md.vw-pc(60);
+            }
+        
+            .info-input-textboxarea {
+                width: md.vw-pc(660);
+                height: md.vw-pc(160);
+            }
+        }
+
+        .info-input:nth-child(3) {
+
+            .info-input-textbox {
+                width: md.vw-pc(330);
+            }
+        }
+        
+        .info-input:nth-child(6) {
+
+            .info-input-textbox {
+                width: md.vw-pc(330);
+            }
+        }
+
+        .info-sendbox {
+            padding-top: md.vw-pc(100);
+    
+            .viewmore-text {
+                width: md.vw-pc(171);
+            }
+        }
+    }
+}
+
+/*---font---*/
+.info-input-title {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(12), 700, md.vw-sp(20));
+
+    .info-red {
+        color: vb.$orange-color;
+    }
+}
+  
+@include md.rps-sw(pc) {
+    .info-input-title {
+        @include md.fontset(md.vw-pc(20), 700, md.vw-pc(20));
+    }
+}

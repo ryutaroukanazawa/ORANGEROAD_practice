@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+// base set
+@use '../../bases/reset';
+@use '../../bases/base';
+
+// layout set
+@use '../../layouts/header-pages';
+@use '../cardetail/index' ;
+@use '../../layouts/contact';
+@use '../../layouts/footer';

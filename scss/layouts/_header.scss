@@ -1,0 +1,140 @@
+@use '../bases/variables' as vb;
+@use '../modules/index' as md;
+
+.hd {
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: md.vw-sp(23) md.vw-sp(28);
+    display: flex;
+    align-items: center;
+    gap: md.vw-sp(25);
+
+    .hd-logo {
+        width: md.vw-sp(200);
+    }
+
+    .hd-ul {
+        display: flex;
+        align-items: center;
+        gap: md.vw-sp(24);
+
+        .hd-li-backcolor {
+            width: md.vw-sp(40);
+            height: md.vw-sp(40);
+            display: flex;
+            @include md.fl-center(xy);
+
+            .hd-mail {
+                width: md.vw-sp(18);
+            }
+        }
+        
+
+        .mobile-menu-icon {
+            background-color: unset;
+            border: none;
+            outline: none !important;
+            cursor: pointer;
+        
+            & > span {
+                background-color: vb.$white-color;
+                width: md.vw-sp(35);
+                height: md.vw-sp(2);
+                display: block;
+                margin-bottom: md.vw-sp(9);
+                transition: transform 0.7s;
+        
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        
+        .menu-open {
+            background-color: vb.$white-color;
+        
+            & .mobile-menu-icon {
+                & > span {
+                    background-color: vb.$black-color;
+
+        
+                    &:nth-child(1) {
+                        transition-delay: 70ms;
+                        transform: translateY(11px) rotate(135deg);
+                    }
+                    &:nth-child(2) {
+                        transition-delay: 0s;
+                        transform:  translateX(-18px) scaleX(0);
+                    }
+                    &:nth-child(3) {
+                        transition-delay: 140ms;
+                        transform: translateY(-11px) rotate(-135deg);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include md.rps-sw(pc) {
+    .hd {
+        padding: md.vw-pc(36) md.vw-pc(38);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    
+        .hd-logo {
+            width: md.vw-pc(250);
+        }
+    
+        .hd-ul {
+            display: flex;
+            align-items: center;
+            gap: md.vw-pc(39);
+
+            .hd-li-normal:nth-child(-n+2) {
+                width: auto;
+                margin: 0 auto;
+                padding-bottom: md.vw-pc(0);
+                border-bottom: 5px solid vb.$orange-color;
+                text-align: left;
+    
+                .up_arrow {
+                    display: block;
+                    border-top: 2px solid vb.$white-color;
+                    border-right: 2px solid vb.$white-color;
+                    transform: rotate(-45deg);
+                    width: md.vw-pc(10);
+                    height: md.vw-pc(10);
+                    float: right;
+                    margin-top: md.vw-pc(5);
+                    margin-left: md.vw-pc(10);
+                    margin-right: md.vw-pc(3);
+                }
+            }
+    
+            .hd-li-backcolor {
+                width: md.vw-pc(140);
+                height: md.vw-pc(30);
+                display: flex;
+                @include md.fl-center(xy);
+                gap: md.vw-pc(10);
+
+                .hd-mail {
+                    width: md.vw-pc(18);
+                }
+            }
+        }
+    }
+}
+
+/*---font---*/
+.hd-li-normal {
+    @include md.fontset(md.vw-pc(14), 600, md.vw-pc(17), 0.04em);
+  }
+  
+  .hd-li-backcolor {
+    @include md.fontset(md.vw-pc(14), 600, md.vw-pc(17), 0.04em);
+  }

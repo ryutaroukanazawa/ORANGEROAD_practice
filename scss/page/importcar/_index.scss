@@ -1,0 +1,14 @@
+@forward './importcar-textarea';
+@forward './importcar-imglist';
+
+@use '../../modules/index' as md;
+
+.fv {
+    @include md.bg-img('/img/importcar-bgi-sp.png');
+}
+
+@include md.rps-sw(pc) {
+    .fv {
+        @include md.bg-img('/img/importcar-bgi-pc.png');
+    }
+}

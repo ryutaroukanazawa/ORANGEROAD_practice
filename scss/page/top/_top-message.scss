@@ -1,0 +1,79 @@
+@use '../../bases/variables' as vb;
+@use '../../modules/index' as md;
+
+.message {
+    width: 100%;
+    padding: md.vw-sp(192) md.vw-sp(28) md.vw-sp(80);
+    text-align: center;
+
+    .message-container {
+        padding: md.vw-sp(105) md.vw-sp(20) md.vw-sp(83);
+        position: relative;
+
+        .section-title {
+            padding-bottom: md.vw-sp(29);
+        }
+
+        .message-text {
+            text-align: left;
+        }
+
+        .message-car {
+            width: md.vw-sp(210);
+            height: md.vw-sp(120);
+            position: absolute;
+            bottom: md.vw-sp(-40);
+            right: 0;
+        }
+
+        .message-man {
+            width: md.vw-sp(200);
+            height: md.vw-sp(200);
+            position: absolute;
+            @include md.ps-center(x);
+            top: md.vw-sp(-142);
+        }
+    }
+}
+
+@include md.rps-sw(pc) {
+    .message {
+        padding: md.vw-pc(173) md.vw-pc(191) md.vw-pc(120) md.vw-pc(289);
+        text-align: initial;
+    
+        .message-container {
+            padding: md.vw-pc(86) md.vw-pc(102) md.vw-pc(63) md.vw-pc(208);
+    
+            .section-title {
+                padding-bottom: md.vw-pc(29);
+            }
+    
+            .message-car {
+                width: md.vw-pc(360);
+                height: md.vw-pc(220);
+                bottom: initial;
+                top: md.vw-pc(-70);
+                right: md.vw-pc(-130);
+            }
+    
+            .message-man {
+                width: md.vw-pc(280);
+                height: md.vw-pc(360);
+                @include md.ps-center(y);
+                left: md.vw-pc(-140);
+            }
+        }
+    }
+}
+
+/*---font---*/
+.message-text {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(12), 500, md.vw-sp(26), 0.08em);
+  }
+  
+  @include md.rps-sw(pc) {
+    .message-text {
+      @include md.fontset(md.vw-pc(14), 500, md.vw-pc(26), 0.08em);
+    }
+  }

@@ -1,0 +1,99 @@
+@use '../../bases/variables' as vb;
+@use '../../modules/index' as md;
+
+.contents {
+    width: 100%;
+    padding: md.vw-sp(30) md.vw-sp(27) md.vw-sp(60);
+
+    .contents-pankuzu {
+        padding-bottom: md.vw-sp(30);
+    }
+
+    .contents-container {
+        display: flex;
+        flex-direction: column;
+        gap: md.vw-sp(15);
+    }
+
+    .googlemap {
+        width: 100%;
+        height: md.vw-sp(180);
+        margin-top: md.vw-sp(50);
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+/*---PC-Layout---*/
+@include md.rps-sw(pc) {
+    .contents {
+        padding: md.vw-pc(66) md.vw-pc(120) md.vw-pc(120);
+    
+        .contents-pankuzu {
+            padding-bottom: md.vw-pc(50);
+        }
+
+        .contents-container {
+            display: flex;
+            flex-direction: column;
+            gap: md.vw-pc(5);
+
+            .contents-info {
+                display: flex;
+                align-items: center;
+                gap: md.vw-pc(55);
+
+                .info-title {
+                    width: md.vw-pc(140);
+                }
+            }
+        }
+    
+        .googlemap {
+            width: 100%;
+            height: md.vw-pc(280);
+            margin-top: md.vw-pc(80);
+    
+            iframe {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+    }
+}
+
+/*---font---*/
+.contents-pankuzu {
+    @include md.fontset(md.vw-sp(12), 700, md.vw-sp(14), 0.04em);
+}
+
+.info-title {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(12), 600, md.vw-sp(25), 0.08em);
+}
+
+.info-text {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(12), 400, md.vw-sp(12), 0.08em);
+}
+
+  
+@include md.rps-sw(pc) {
+    .contents-pankuzu {
+        @include md.fontset(md.vw-pc(16), 700, md.vw-pc(19), 0.04em);
+    }
+
+    .info-title {
+        @include md.fontset(md.vw-pc(14), 600, md.vw-pc(34), 0.08em);
+    }
+    
+    .info-text {
+        @include md.fontset(md.vw-pc(14), 400, md.vw-pc(34), 0.08em);
+    }
+    
+    
+}

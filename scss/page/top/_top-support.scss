@@ -1,0 +1,135 @@
+@use '../../bases/variables' as vb;
+@use '../../modules/index' as md;
+
+.support {
+    @include md.bg-img('/img/top-support-bgi.png');
+    width: 100%;
+    // height: md.vw-sp(1100);
+    padding: md.vw-sp(50) md.vw-sp(31);
+
+    .support-container {
+        display: flex;
+        flex-direction: column;
+        gap: md.vw-sp(38);
+        padding: md.vw-sp(37) 0;
+
+        .support-contents {
+            position: relative;
+
+            .support-img {
+                width: 100%;
+                height: md.vw-sp(180);
+            }
+    
+            .support-contents-title {
+                width: md.vw-sp(110);
+                height: md.vw-sp(40);
+                text-align: center;
+                position: absolute;
+                top: md.vw-sp(126);
+                left: md.vw-sp(-12);
+            }
+
+            .support-contents-text {
+                padding-top: md.vw-sp(10);
+            }
+        }
+
+        .support-contents:last-child {
+
+            .support-contents-title {
+                width: md.vw-sp(190);
+            }
+        }
+    }
+}
+
+@include md.rps-sw(pc) {
+    .support {
+        // height: md.vw-pc(720);
+        padding: md.vw-pc(100) md.vw-pc(121);
+
+        .support-subtitle {
+            display: flex;
+            padding: md.vw-pc(10) md.vw-pc(185-121) 0;
+            align-items: center;
+
+            .viewmore-text {
+                padding-bottom: md.vw-pc(6);
+                margin-right: 0;
+            }
+        }
+    
+        .support-container {
+            flex-direction: row;
+            gap: md.vw-pc(40);
+            padding: md.vw-pc(45) md.vw-pc(185-121) 0;
+    
+            .support-contents {
+                position: relative;
+    
+                .support-img {
+                    width: md.vw-pc(330);
+                    height: md.vw-pc(230);
+                }
+        
+                .support-contents-title {
+                    width: md.vw-pc(140);
+                    height: md.vw-pc(40);
+                    top: md.vw-pc(165);
+                    left: md.vw-pc(-15);
+                }
+    
+                .support-contents-text {
+                    padding-top: md.vw-pc(20);
+                }
+            }
+    
+            .support-contents:last-child {
+    
+                .support-contents-title {
+                    width: md.vw-pc(240);
+                }
+            }
+        }
+    }
+}
+
+/*---font---*/
+.support-subtitle-text {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(20), 700, md.vw-sp(27), 0.08em);
+  }
+  
+  .support-subtitle-big {
+    font-family: vb.$sub-font2;
+    @include md.fontset(md.vw-sp(45), 700, md.vw-sp(50), 0.08em);
+  }
+  
+  .support-contents-title {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(16), 700, md.vw-sp(40), 0.04em);
+  }
+  
+  .support-contents-text {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(12), 400, md.vw-sp(24), 0.08em);
+  }
+  
+  @include md.rps-sw(pc) {
+    .support-subtitle-text {
+      @include md.fontset(md.vw-pc(28), 700, md.vw-pc(38), 0.08em);
+    }
+    
+    .support-subtitle-big {
+      @include md.fontset(md.vw-pc(60), 700, md.vw-pc(90), 0.08em);
+    }
+    
+    .support-contents-title {
+      @include md.fontset(md.vw-pc(20), 700, md.vw-pc(40), 0.04em);
+    }
+    
+    .support-contents-text {
+      @include md.fontset(md.vw-pc(14), 400, md.vw-pc(24), 0.08em);
+    }
+  }

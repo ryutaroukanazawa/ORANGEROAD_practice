@@ -1,0 +1,14 @@
+@forward './contact-textarea';
+@forward './contact-inputarea';
+
+@use '../../modules/index' as md;
+
+.fv {
+    @include md.bg-img('/img/contact-bgi-sp.png');
+}
+
+@include md.rps-sw(pc) {
+    .fv {
+        @include md.bg-img('/img/contact-bgi-pc.png');
+    }
+}

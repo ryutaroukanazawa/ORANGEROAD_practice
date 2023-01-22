@@ -1,0 +1,165 @@
+@use '../../bases/variables' as vb;
+@use '../../modules/index' as md;
+
+.roadmap {
+    width: 100%;
+    padding: md.vw-sp(60) md.vw-sp(28) md.vw-sp(53);
+    white-space: nowrap;
+    @include md.bg-img('/img/top-support-bgi.png');
+
+
+    .roadmap-container {
+        display: flex;
+        gap: md.vw-sp(16);
+        text-align: center;
+        padding-top: md.vw-sp(31);
+        height: md.vw-sp(160);
+        align-items: center;
+        overflow-y: hidden;
+
+        &::-webkit-scrollbar {
+            height: md.vw-sp(10);
+        }
+
+        &::-webkit-scrollbar-thumb{
+            background-color: #D9D9D9;
+            border-radius: 130px;
+            width: md.rem(100);
+        }
+        
+        .roadmap-contents {
+            position: relative;
+            width: md.vw-sp(150);
+            height: md.vw-sp(80);
+
+            .roadmap-step {
+                width: md.vw-sp(90);
+                height: md.vw-sp(29);
+                position: absolute;
+                @include md.ps-center(x);
+                top: md.vw-sp(-15);
+            }
+
+            .roadmap-contents-box {
+                display: flex;
+                @include md.fl-center(xy);
+                width: md.vw-sp(150);
+                height: md.vw-sp(80);
+
+                .roadmap-contents-title {
+                
+                    .roadmap-contents-title-sm {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .roadmap-contents-arrow {
+            margin-right: md.vw-sp(5);
+
+            .arrow-value {
+                display: inline-block;
+                border-top: 3px solid vb.$black-color;
+                border-right: 3px solid vb.$black-color;
+                transform: rotate(45deg);
+                width: md.vw-sp(15);
+                height: md.vw-sp(15);
+                padding-right: md.vw-sp(10);
+            }
+        }
+    }
+}
+
+@include md.rps-sw(pc) {
+    .roadmap {
+        padding: md.vw-pc(100) md.vw-pc(100);
+        white-space: initial;
+        text-align: center;
+    
+        .roadmap-container {
+            gap: md.vw-pc(21);
+            padding-top: md.vw-pc(85);
+            height: md.vw-pc(400);
+            overflow-y: initial;
+            flex-wrap: wrap;
+            justify-content: center;
+            
+            .roadmap-contents {
+                position: relative;
+                width: md.vw-pc(240);
+                height: md.vw-pc(110);
+    
+                .roadmap-step {
+                    width: md.vw-pc(150);
+                    height: md.vw-pc(40);
+                    top: md.vw-pc(-20);
+                }
+    
+                .roadmap-contents-box {
+                    width: md.vw-pc(240);
+                    height: md.vw-pc(110);
+    
+                    .roadmap-contents-title {
+                    
+                        .roadmap-contents-title-sm {
+                            padding-top: md.vw-pc(5);
+                        }
+                    }
+                }
+            }
+    
+            .roadmap-contents-arrow {
+                margin-right: md.vw-pc(5);
+    
+                .arrow-value {
+                    width: md.vw-pc(15);
+                    height: md.vw-pc(15);
+                    padding-right: md.vw-pc(10);
+                }
+            }
+        }
+    }   
+}
+
+/*---font---*/
+.roadmap-step {
+    @include md.fontset(md.vw-sp(16), 600, md.vw-sp(29), 0.04em);
+  }
+  
+  .roadmap-contents-title {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(16), 700, md.vw-sp(20), 0.04em);
+  }
+  
+  .roadmap-contents:nth-child(7) {
+      .roadmap-contents-title {
+        @include md.fontset(md.vw-sp(14), 700, md.vw-sp(20), 0.04em);
+      }
+  }
+  
+  .roadmap-contents-title-sm {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(12), 700, md.vw-sp(12), 0.04em);
+  }
+  
+  @include md.rps-sw(pc) {
+    .roadmap-step {
+      @include md.fontset(md.vw-pc(16), 600, md.vw-pc(40), 0.04em);
+    }
+    
+    .roadmap-contents-title {
+      @include md.fontset(md.vw-pc(20), 700, md.vw-pc(27), 0.04em);
+    }
+  
+    .roadmap-contents:nth-child(7) {
+      .roadmap-contents-title {
+        @include md.fontset(md.vw-pc(20), 700, md.vw-pc(27), 0.04em);
+      }
+    }
+  
+    .roadmap-contents-title-sm {
+      font-family: vb.$sub-font1;
+      @include md.fontset(md.vw-pc(14), 700, md.vw-pc(14), 0.04em);
+    }
+  }

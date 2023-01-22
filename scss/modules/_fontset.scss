@@ -1,0 +1,10 @@
+// ===============
+// font一括指定
+// ===============
+
+@mixin fontset($font_size, $font_weight, $line_height: 1em, $letter_spacing: 0) {
+	font-size: $font_size;
+	font-weight: $font_weight;
+	line-height: $line_height;
+	letter-spacing: $letter_spacing;
+}

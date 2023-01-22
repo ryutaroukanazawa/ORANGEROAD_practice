@@ -1,0 +1,11 @@
+// ===============
+// flex set
+// ===============
+
+@mixin flexset($align:flex-start, $justy:flex-start, $dir:row, $wrap:nowrap) {
+    display        : flex;
+    align-items    : $align;
+    justify-content: $justy;
+    flex-direction : $dir;
+    flex-wrap      : $wrap;
+}

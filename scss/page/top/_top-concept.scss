@@ -1,0 +1,70 @@
+@use '../../bases/variables' as vb;
+@use '../../modules/index' as md;
+
+.concept {
+    @include md.bg-img('/img/top-concept-bgi-sp.png');
+    width: 100%;
+    // height: md.vw-sp(430);
+    padding: md.vw-sp(58) md.vw-sp(25);
+    text-align: center;
+
+    .concept-title {
+        padding-bottom: md.vw-sp(34);
+    }
+
+    .concept-sideline {
+        display: inline-block;
+        width: md.vw-sp(70);
+        padding-bottom: md.vw-sp(30);
+        border-top: 1px solid vb.$white-color;
+    }
+
+    .concept-text {
+        text-align: left;
+    }
+}
+
+@include md.rps-sw(pc) {
+    .concept {
+        @include md.bg-img('/img/top-concept-bgi-pc.png');
+        width: md.vw-pc(1200);
+        // height: md.vw-pc(490);
+        padding: md.vw-pc(93) md.vw-pc(310);
+        margin: 0 auto;
+        margin-bottom: md.vw-pc(100);
+    
+        .concept-title {
+            padding-bottom: md.vw-pc(24);
+        }
+    
+        .concept-sideline {
+            width: md.vw-pc(70);
+            padding-bottom: md.vw-pc(46);
+        }
+    
+        .concept-text {
+            text-align: center;
+        }
+    }
+}
+
+/*---font---*/
+.concept-title {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(20), 700, md.vw-sp(27), 0.08em);
+  }
+  
+  .concept-text {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(12), 500, md.vw-sp(24), 0.08em);
+  }
+  
+  @include md.rps-sw(pc) {
+    .concept-title {
+      @include md.fontset(md.vw-pc(28), 700, md.vw-pc(38), 0.08em);
+    }
+    
+    .concept-text {
+      @include md.fontset(md.vw-pc(14), 500, md.vw-pc(36), 0.08em);
+    }
+  }

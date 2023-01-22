@@ -1,0 +1,83 @@
+@use '../../bases/variables' as vb;
+@use '../../modules/index' as md;
+
+.textarea {
+    width: 100%;
+    padding: md.vw-sp(30) md.vw-sp(27) md.vw-sp(80);
+
+    .textarea-pankuzu {
+        padding-bottom: md.vw-sp(20);
+    }
+
+    .support-subtitle-text {
+        padding-bottom: md.vw-sp(30);
+    }
+
+    .textarea-ul {
+
+        .textarea-li {
+            display: flex;
+            gap: md.vw-sp(30);
+        }
+    }
+}
+
+/*---PC-Layout---*/
+@include md.rps-sw(pc) {
+    .textarea {
+        padding: md.vw-pc(70) md.vw-pc(120);
+    
+        .textarea-pankuzu {
+            padding-bottom: md.vw-pc(50);
+        }
+
+        .support-subtitle-text {
+            padding-bottom: md.vw-pc(50);
+            text-align: center;
+        }
+    
+        .textarea-ul {
+            display: flex;
+            justify-content: center;
+            gap: md.vw-pc(40);
+        }   
+    }
+}
+
+/*---font---*/
+.textarea-pankuzu {
+    @include md.fontset(md.vw-sp(12), 700, md.vw-sp(14), 0.04em);
+}
+
+.support-subtitle-text {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(20), 700, md.vw-sp(27), 0.08em);
+
+    .support-subtitle-big {
+        font-family: vb.$sub-font2;
+        @include md.fontset(md.vw-sp(45), 700, md.vw-sp(67), 0.08em);
+    }
+}
+
+.textarea-ul {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(14), 700, md.vw-sp(38));
+}
+  
+@include md.rps-sw(pc) {
+    .textarea-pankuzu {
+        @include md.fontset(md.vw-pc(16), 700, md.vw-pc(19), 0.04em);
+    }
+    
+    .support-subtitle-text {
+        @include md.fontset(md.vw-pc(28), 700, md.vw-pc(38), 0.08em);
+    
+        .support-subtitle-big {
+            @include md.fontset(md.vw-pc(60), 700, md.vw-pc(90), 0.08em);
+        }
+    }
+    
+    .textarea-ul {
+        @include md.fontset(md.vw-pc(20), 700, md.vw-pc(27));
+    }
+}

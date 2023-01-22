@@ -1,0 +1,156 @@
+@use '../bases/variables' as vb;
+@use '../modules/index' as md;
+
+/*
+===============
+Google-Font
+===============
+*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/*
+===============
+Base
+===============
+*/
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: vb.$main-font;
+  color: vb.$black-color;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+===============
+Color-Set
+===============
+*/
+.orange-white-cv {
+  background-color: vb.$orange-color;
+  color: vb.$white-color;
+}
+
+.orange-black-cv {
+  background-color: vb.$orange-color;
+  color: vb.$black-color;
+}
+
+.green-white-cv {
+  background-color: vb.$green-color;
+  color: vb.$white-color;
+}
+
+.green-black-cv {
+  background-color: vb.$green-color;
+  color: vb.$black-color;
+}
+
+.brown-white-cv {
+  background-color: vb.$brown-color;
+  color: vb.$white-color;
+}
+
+.beige-black-cv {
+  background-color: vb.$beige-color;
+  color: vb.$black-color;
+}
+
+.white-orange-cv {
+  background-color: vb.$white-color;
+  color: vb.$orange-color;
+}
+
+.white-black-cv {
+  background-color: vb.$white-color;
+  color: vb.$black-color;
+}
+
+.orange-text {
+  color: vb.$orange-color;
+}
+
+.green-text {
+  color: vb.$green-color;
+}
+
+.white-text {
+  color: vb.$white-color;
+}
+
+.black-text {
+  color: vb.$black-color;
+}
+
+.brown-text {
+  color: vb.$brown-color;
+}
+
+/*
+===============
+Common-layout
+===============
+*/
+.viewmore-text {
+  width: md.vw-sp(210);
+  margin: 0 auto;
+  padding-bottom: md.vw-sp(6);
+  border-bottom: 6px solid vb.$orange-color;
+  text-align: left;
+
+  .side_arrow {
+    display: block;
+    border-top: 2px solid vb.$black-color;
+    border-right: 2px solid vb.$black-color;
+    transform: rotate(45deg);
+    width: md.vw-sp(10);
+    height: md.vw-sp(10);
+    float: right;
+    margin-top: md.vw-sp(10);
+    margin-right: md.vw-sp(5);
+  }
+}
+
+@include md.rps-sw(pc) {
+  .viewmore-text {
+    width: md.vw-pc(210);
+    padding-bottom: md.vw-pc(0);
+    padding-top: md.vw-pc(12);
+  
+    .side_arrow {
+      width: md.vw-pc(10);
+      height: md.vw-pc(10);
+      margin-top: md.vw-pc(8);
+      margin-right: md.vw-pc(5);
+    }
+  }
+}
+
+/*
+===============
+Font-Set
+===============
+*/
+
+/*---Common---*/
+.section-title {
+  @include md.fontset(md.vw-sp(45), 700, md.vw-sp(55), 0.06em);
+}
+
+.viewmore-text {
+  @include md.fontset(md.vw-sp(20), 700, md.vw-sp(24), 0.04em);
+}
+
+@include md.rps-sw(pc) {
+  .section-title {
+    @include md.fontset(md.vw-pc(60), 700, md.vw-pc(73), 0.06em);
+  }
+
+  .viewmore-text {
+    @include md.fontset(md.vw-pc(20), 700, md.vw-pc(24), 0.04em);
+  }
+}

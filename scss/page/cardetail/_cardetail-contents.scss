@@ -1,0 +1,144 @@
+@use '../../bases/variables' as vb;
+@use '../../modules/index' as md;
+
+.contents {
+    width: 100%;
+    padding: 0 md.vw-sp(28) md.vw-sp(30);
+
+    .contents-container {
+
+        .img-back {
+            height: md.vw-sp(200);
+            display: flex;
+            @include md.fl-center(xy);
+
+            .car-main-img {
+                width: 80%
+            }
+        }
+    }
+
+    .contents-imgs {
+        width: 100%;
+        display: grid;
+        gap: md.vw-sp(13);
+        justify-items: center;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding: md.vw-sp(40) 0;
+
+        .contents-imgs-block {
+            width: md.vw-sp(70);
+            height: md.vw-sp(50);
+            background-color: #D9D9D9;
+        }
+    }
+
+    .contents-ul {
+        padding-top: md.vw-sp(50);
+
+        .contents-li {
+            display: flex;
+            gap: md.vw-sp(43);
+
+            .contents-li-title {
+                width: md.vw-sp(70);
+            }
+        }
+    }
+
+    .contents-pagelink {
+        width: 100%;
+        padding: md.vw-sp(60) 0 md.vw-sp(40);
+
+        .imglist-pagelink-ul {
+            display: flex;
+            justify-content: center;
+            gap: md.vw-sp(29);
+        }
+    }
+}
+
+/*---PC-Layout---*/
+@include md.rps-sw(pc) {
+    .contents {
+        padding: 0 md.vw-pc(120) md.vw-pc(120);
+    
+        .contents-container {
+            display: flex;
+            gap: md.vw-pc(81);
+    
+            .img-back {
+                width: md.vw-pc(750);
+                height: md.vw-pc(510);
+    
+                .car-main-img {
+                    width: 70%
+                }
+            }
+        }
+    
+        .contents-imgs {
+            gap: md.vw-pc(24);
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            padding: md.vw-pc(40) 0;
+    
+            .contents-imgs-block {
+                width: md.vw-pc(180);
+                height: md.vw-pc(120);
+            }
+        }
+    
+        .contents-ul {
+            padding-top: md.vw-pc(10);
+    
+            .contents-li {
+                gap: md.vw-pc(30);
+    
+                .contents-li-title {
+                    width: md.vw-pc(85);
+                }
+            }
+        }
+    
+        .contents-pagelink {
+            padding: md.vw-pc(100) 0 md.vw-pc(0);
+    
+            .imglist-pagelink-ul {
+                gap: md.vw-pc(50);
+            }
+        }
+    }
+}
+
+/*---font---*/
+.contents-li-title {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(12), 600, md.vw-sp(30), 0.08em);
+}
+
+.contents-li-text {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(12), 400, md.vw-sp(30), 0.08em);
+}
+
+.imglist-pagelink-ul {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(14), 700, md.vw-sp(19), 0em);
+}
+  
+@include md.rps-sw(pc) {
+    .contents-li-title {
+        font-family: vb.$sub-font1;
+        @include md.fontset(md.vw-pc(14), 600, md.vw-pc(34), 0.08em);
+    }
+    
+    .contents-li-text {
+        font-family: vb.$sub-font1;
+        @include md.fontset(md.vw-pc(14), 400, md.vw-pc(34), 0.08em);
+    }
+    
+    .imglist-pagelink-ul {
+        font-family: vb.$sub-font1;
+        @include md.fontset(md.vw-pc(20), 700, md.vw-pc(27), 0em);
+    }
+}

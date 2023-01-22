@@ -1,0 +1,59 @@
+@use '../../bases/variables' as vb;
+@use '../../modules/index' as md;
+
+.titlearea {
+    width: 100%;
+    padding: 0 md.vw-sp(28) md.vw-sp(30);
+
+    .titlearea-pankuzu {
+        padding-bottom: md.vw-sp(30);
+    }
+
+    .titlearea-maintitle {
+        padding-bottom: md.vw-sp(3);
+    }
+}
+
+/*---PC-Layout---*/
+@include md.rps-sw(pc) {
+    .titlearea {
+        padding: md.vw-pc(36) md.vw-pc(120) md.vw-pc(60);
+    
+        .titlearea-pankuzu {
+            padding-bottom: md.vw-pc(76);
+        }
+    
+        .titlearea-maintitle {
+            padding-bottom: md.vw-pc(12);
+        }
+    }
+}
+
+/*---font---*/
+.titlearea-pankuzu {
+    @include md.fontset(md.vw-sp(12), 700, md.vw-sp(20), 0.04em);
+}
+
+.titlearea-maintitle {
+    @include md.fontset(md.vw-sp(36), 700, md.vw-sp(43), 0.04em);
+}
+
+.titlearea-subtitle {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(20), 700, md.vw-sp(25), 0.04em);
+}
+  
+@include md.rps-sw(pc) {
+    .titlearea-pankuzu {
+        @include md.fontset(md.vw-pc(16), 700, md.vw-pc(19), 0.04em);
+    }
+    
+    .titlearea-maintitle {
+        @include md.fontset(md.vw-pc(60), 700, md.vw-pc(73), 0.04em);
+    }
+    
+    .titlearea-subtitle {
+        font-family: vb.$sub-font1;
+        @include md.fontset(md.vw-pc(20), 700, md.vw-pc(24), 0.04em);
+    }
+}

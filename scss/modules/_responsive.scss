@@ -1,0 +1,61 @@
+// ===============
+// Responsive Desine
+// ===============
+
+
+$breakpoints: (
+  'xs': (min-width: 0),
+  'sp': (min-width: 470px),
+  'pc': (min-width: 900px),
+  'tab': (min-width: 1000px),
+  'xl': (min-width: 1200px),
+  'xxl': (min-width: 1440px)
+) !default;
+
+@mixin rps-sw($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media screen and #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+ 
+  // マップ型で定義されていない値が呼び出された時はエラーを返す
+  @else {
+    @error "指定されたブレークポイントは定義されていません。" + "指定できるブレークポイントは次のとおりです。 -> #{map-keys($breakpoints)}";
+  }
+}
+
+
+// ===============
+// scss example
+// ===============
+// body {
+//   font-size: 12px;
+  
+//   @include responsive(md) {
+//     font-size: 14px;
+//   }
+  
+//   @include responsive(xl) {
+//     font-size: 16px;
+//   }
+// }
+
+// ===============
+// compile example
+// ===============
+// body {
+//   font-size: 12px;
+// }
+
+// @media screen and (min-width: 768px) {
+//   body {
+//     font-size: 14px;
+//   }
+// }
+
+// @media screen and (min-width: 1200px) {
+//   body {
+//     font-size: 16px;
+//   }
+// }

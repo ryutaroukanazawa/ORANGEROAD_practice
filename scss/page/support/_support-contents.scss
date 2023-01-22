@@ -1,0 +1,229 @@
+@use '../../bases/variables' as vb;
+@use '../../modules/index' as md;
+
+.contents {
+    width: 100%;
+    padding-bottom: md.vw-sp(80);
+    display: flex;
+    flex-direction: column;
+    gap: md.vw-sp(80);
+
+    .contents-container {
+        padding: 0 md.vw-sp(27);
+        display: flex;
+        flex-direction: column;
+        gap: md.vw-sp(50);
+
+        .contents-block1 {
+            display: flex;
+            flex-direction: column;
+            gap: md.vw-sp(40);
+    
+            .contents-maintitle {
+                padding-bottom: md.vw-sp(50);
+            }
+        
+            .contents-subtitle {
+                width: md.vw-sp(140);
+                height: md.vw-sp(50);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        
+            .contents-text {
+                padding-top: md.vw-sp(20);
+            }
+        
+            .contents-img {
+                width: 100%;
+            }
+        }
+    
+        .contents-block2 {
+            display: flex;
+            flex-direction: column;
+            gap: md.vw-sp(20);
+            text-align: center;
+            
+            .contents-item {
+                padding: md.vw-sp(30) md.vw-sp(35);
+
+                .item-number {
+                    margin: 0 auto;
+                    margin-bottom: md.vw-sp(20);
+                    width: md.vw-sp(75);
+                    border-bottom: 5px solid vb.$green-color;
+                }
+
+                .item-point {
+                    margin: 0 auto;
+                    margin-bottom: md.vw-sp(20);
+                    width: md.vw-sp(75);
+                    border-bottom: 5px solid vb.$brown-color;
+                }
+
+                .item-title {
+                    padding-bottom: md.vw-sp(15);
+                }
+
+                .item-text {
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+    .contents-container:nth-child(2) {
+        @include md.bg-img('/img/top-support-bgi.png');
+        padding-top: md.vw-sp(50);
+        padding-bottom: md.vw-sp(50);
+    }
+
+    .contents-container:last-child {
+        .contents-subtitle {
+            width: md.vw-sp(240);
+        }
+    }
+}
+
+/*---PC-Layout---*/
+@include md.rps-sw(pc) {
+    .contents {
+        padding-bottom: md.vw-pc(80);
+        gap: md.vw-pc(120);
+    
+        .contents-container {
+            padding: 0 md.vw-pc(120);
+            gap: md.vw-pc(100);
+    
+            .contents-block1 {
+                flex-direction: row;
+                gap: md.vw-pc(121);
+                justify-content: space-between;
+        
+                .contents-maintitle {
+                    padding-top: md.vw-pc(20);
+                    padding-bottom: md.vw-pc(112);
+                }
+            
+                .contents-subtitle {
+                    width: md.vw-pc(180);
+                    height: md.vw-pc(60);
+                }
+            
+                .contents-text {
+                    padding-top: md.vw-pc(45);
+                }
+            
+                .contents-img {
+                    width: md.vw-pc(680);
+                }
+            }
+        
+            .contents-block2 {
+                flex-direction: row;
+                gap: md.vw-pc(30);
+                
+                .contents-item {
+                    padding: md.vw-pc(30) md.vw-pc(35);
+                    width: md.vw-pc(380);
+    
+                    .item-number {
+                        margin-bottom: md.vw-pc(20);
+                        width: md.vw-pc(90);
+                    }
+    
+                    .item-point {
+                        margin-bottom: md.vw-pc(20);
+                        width: md.vw-pc(90);
+                    }
+    
+                    .item-title {
+                        padding-bottom: md.vw-pc(15);
+                    }
+                }
+            }
+        }
+    
+        .contents-container:nth-child(2) {
+            padding-top: md.vw-pc(100);
+            padding-bottom: md.vw-pc(90);
+        }
+    
+        .contents-container:last-child {
+            .contents-subtitle {
+                width: md.vw-pc(320);
+            }
+        }
+    }
+}
+
+/*---font---*/
+.contents-maintitle {
+    @include md.fontset(md.vw-sp(36), 700, md.vw-sp(43), 0.04em);
+}
+
+.contents-subtitle-text {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(20), 700, md.vw-sp(20));
+}
+
+.contents-text {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(12), 500, md.vw-sp(24), 0.08em);
+}
+
+.item-title {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(20), 700, md.vw-sp(24), 0.1em);
+}
+
+.item-text {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(12), 500, md.vw-sp(24), 0.08em);
+}
+
+.item-number {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(14), 700, md.vw-sp(19), 0.1em);
+}
+
+.item-point {
+    @include md.fontset(md.vw-sp(14), 700, md.vw-sp(19), 0.1em);
+}
+  
+@include md.rps-sw(pc) {
+    .contents-maintitle {
+        @include md.fontset(md.vw-pc(44), 700, md.vw-pc(53), 0.04em);
+    }
+    
+    .contents-subtitle-text {
+        font-family: vb.$sub-font1;
+        @include md.fontset(md.vw-pc(28), 700, md.vw-pc(28));
+    }
+    
+    .contents-text {
+        font-family: vb.$sub-font1;
+        @include md.fontset(md.vw-pc(14), 500, md.vw-pc(24), 0.08em);
+    }
+    
+    .item-title {
+        font-family: vb.$sub-font1;
+        @include md.fontset(md.vw-pc(28), 700, md.vw-pc(38), 0.1em);
+    }
+    
+    .item-text {
+        font-family: vb.$sub-font1;
+        @include md.fontset(md.vw-pc(14), 400, md.vw-pc(24), 0.04em);
+    }
+    
+    .item-number {
+        font-family: vb.$sub-font1;
+        @include md.fontset(md.vw-pc(16), 700, md.vw-pc(21), 0.1em);
+    }
+
+    .item-point {
+        @include md.fontset(md.vw-pc(16), 700, md.vw-pc(21), 0.1em);
+    }
+}

@@ -1,0 +1,192 @@
+@use '../bases/variables' as vb;
+@use '../modules/index' as md;
+
+.ft {
+    width: 100%;
+    padding: md.vw-sp(70) 0 md.vw-sp(8);
+
+    .ft-mainblock {
+        width: 100%;
+        padding-left: md.vw-sp(36);
+
+        .ft-logo {
+            width: md.vw-sp(290);
+            padding-bottom: md.vw-sp(24);
+        }
+
+        .ft-logotext {
+            padding-bottom: md.vw-sp(28);
+        }
+
+        .ft-addres {
+            padding-bottom: md.vw-sp(28);
+        }
+    }
+
+    .ft-nav {
+        width: 100%;
+        padding: md.vw-sp(45) md.vw-sp(36) md.vw-sp(63);
+        display: flex;
+        justify-content: space-between;
+
+        .ft-ul {
+            display: flex;
+            flex-direction: column;
+            gap: md.vw-sp(24);
+        }
+    }
+
+    .ft-under {
+        text-align: center;
+
+        .ft-backtotop {
+            width: md.vw-sp(200);
+            margin: 0 auto;
+            padding-bottom: md.vw-sp(6);
+            border-bottom: 6px solid vb.$white-color;
+            text-align: left;
+
+            .up_arrow {
+                display: block;
+                border-top: 2px solid vb.$white-color;
+                border-right: 2px solid vb.$white-color;
+                transform: rotate(-45deg);
+                width: md.vw-sp(10);
+                height: md.vw-sp(10);
+                float: right;
+                margin-top: md.vw-sp(7);
+                margin-right: md.vw-sp(5);
+            }
+        }
+
+        .ft-copyright {
+            padding-top: md.vw-sp(37);
+        }
+    }
+}
+
+@include md.rps-sw(pc) {
+    .ft {
+        padding: md.vw-pc(83) 0 md.vw-pc(51);
+
+        .ft-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            padding: 0 md.vw-pc(120);
+
+            .ft-mainblock {
+                padding: initial;
+                width: 50%;
+        
+                .ft-logo {
+                    width: md.vw-pc(330);
+                    padding-bottom: md.vw-pc(30);
+                }
+        
+                .ft-logotext {
+                    padding-bottom: md.vw-pc(25);
+                }
+        
+                .ft-addres {
+                    padding-bottom: md.vw-pc(25);
+                }
+            }
+        
+            .ft-nav {
+                width: 100%;
+                padding: md.vw-pc(45) 0 md.vw-pc(63);
+                display: flex;
+                justify-content: space-around;
+                gap: md.vw-pc(70);
+        
+                .ft-ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: md.vw-pc(25);
+                }
+            }
+        }
+    
+        .ft-under {
+            text-align: left;
+            display: flex;
+            align-items: center;
+            padding: 0 md.vw-pc(120);
+
+    
+            .ft-backtotop {
+                width: md.vw-pc(210);
+                height: md.vw-pc(35);
+                order: 2;
+                margin-right: 0;
+    
+                .up_arrow {
+                    width: md.vw-pc(10);
+                    height: md.vw-pc(10);
+                    margin-top: md.vw-pc(7);
+                    margin-right: md.vw-pc(5);
+                }
+            }
+    
+            .ft-copyright {
+                padding-top: md.vw-pc(0);
+                order: 1;
+            }
+        }
+    }
+}
+
+/*---font---*/
+.ft-logotext {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(16), 600, md.vw-sp(20), 0.08em);
+  }
+  
+  .ft-info {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(12), 400, md.vw-sp(20), 0.08em);
+  }
+  
+  .ft-li {
+    @include md.fontset(md.vw-sp(12), 600, md.vw-sp(15), 0.04em);
+  }
+  
+  .ft-li-child {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(12), 600, md.vw-sp(16), 0.06em);
+  }
+  
+  .ft-backtotop {
+    @include md.fontset(md.vw-sp(16), 700, md.vw-sp(20), 0.04em);
+  }
+  
+  .ft-copyright {
+    @include md.fontset(md.vw-sp(12), 600, md.vw-sp(50), 0.04em);
+  }
+  
+  @include md.rps-sw(pc) {
+    .ft-logotext {
+      @include md.fontset(md.vw-pc(20), 600, md.vw-pc(20), 0.08em);
+    }
+    
+    .ft-info {
+      @include md.fontset(md.vw-pc(14), 400, md.vw-pc(20), 0.08em);
+    }
+    
+    .ft-li {
+      @include md.fontset(md.vw-pc(14), 600, md.vw-pc(17), 0.04em);
+    }
+    
+    .ft-li-child {
+      @include md.fontset(md.vw-pc(14), 600, md.vw-pc(19), 0.06em);
+    }
+    
+    .ft-backtotop {
+      @include md.fontset(md.vw-pc(20), 700, md.vw-pc(24), 0.04em);
+    }
+    
+    .ft-copyright {
+      @include md.fontset(md.vw-pc(14), 600, md.vw-pc(50), 0.04em);
+    }
+  }

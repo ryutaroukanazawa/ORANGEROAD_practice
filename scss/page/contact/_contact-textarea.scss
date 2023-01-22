@@ -1,0 +1,47 @@
+@use '../../bases/variables' as vb;
+@use '../../modules/index' as md;
+
+.textarea {
+    width: 100%;
+    padding: md.vw-sp(30) md.vw-sp(27);
+
+    .textarea-pankuzu {
+        padding-bottom: md.vw-sp(30);
+    }
+}
+
+/*---PC-Layout---*/
+@include md.rps-sw(pc) {
+    .textarea {
+        padding: md.vw-pc(70) md.vw-pc(120);
+    
+        .textarea-pankuzu {
+            padding-bottom: md.vw-pc(50);
+        }
+
+        .textarea-text {
+            text-align: center;
+        }
+    }
+}
+
+/*---font---*/
+.textarea-pankuzu {
+    @include md.fontset(md.vw-sp(12), 700, md.vw-sp(14), 0.04em);
+}
+
+.textarea-text {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(12), 500, md.vw-sp(24), 0.08em);
+}
+  
+@include md.rps-sw(pc) {
+    .textarea-pankuzu {
+        @include md.fontset(md.vw-pc(16), 700, md.vw-pc(19), 0.04em);
+    }
+    
+    .textarea-text {
+        font-family: vb.$sub-font1;
+        @include md.fontset(md.vw-pc(14), 500, md.vw-pc(36), 0.08em);
+    }
+}

@@ -1,0 +1,84 @@
+@use '../../bases/variables' as vb;
+@use '../../modules/index' as md;
+
+.fv {
+    @include md.bg-img('/img/top-fv1-sp.png');
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+
+    .fv-position {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+
+        .fv-scroll {
+            width: md.vw-sp(52+10+76);
+            position: absolute;
+            bottom: 10%;
+            left: -8%;
+    
+            .fv-scroll-text {
+                
+                transform: rotate(90deg);
+    
+                .fv-line {
+                    display: inline-block;
+                    width: md.vw-sp(76);
+                    border-top: 1px solid vb.$white-color;
+                    position: absolute;
+                    top: 50%;
+                    margin-left: md.vw-sp(10);
+                }
+            }
+        }
+    }
+
+    .fv-youtube {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+@include md.rps-sw(pc) {
+    .fv {
+        @include md.bg-img('/img/top-fv1-pc.png');
+    
+        .fv-position {
+    
+            .fv-scroll {
+                width: md.vw-pc(61+10+80);
+                bottom: 50%;
+                left: initial;
+                right: 0;
+        
+                .fv-scroll-text {
+                            
+                    .fv-line {
+                        width: md.vw-pc(76);
+                        margin-left: md.vw-pc(10);
+                    }
+                }
+            }
+        }
+    
+        .fv-youtube {
+            right: md.vw-pc(42);
+        }
+    }    
+}
+
+/*---font---*/
+.fv-scroll {
+    @include md.fontset(md.vw-sp(12), 600, md.vw-sp(12), 0.04em);
+}
+  
+@include md.rps-sw(pc) {
+    .fv-scroll {
+        @include md.fontset(md.vw-pc(14), 600, md.vw-pc(14), 0.04em);
+    }
+}

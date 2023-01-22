@@ -1,0 +1,100 @@
+@use '../../bases/variables' as vb;
+@use '../../modules/index' as md;
+
+.news {
+    @include md.bg-img('/img/top-news-bgi.png');
+    width: 100%;
+    // height: md.vw-sp(1370);
+    padding: md.vw-sp(50) md.vw-sp(28);
+
+    .news-container {
+        padding: md.vw-sp(30) 0;
+        display: flex;
+        flex-direction: column;
+        gap: md.vw-sp(38);
+
+        .news-contents {
+
+            .news-img {
+                width: md.vw-sp(320);
+                height: md.vw-sp(180);
+            }
+
+            .news-date {
+                padding-top: md.vw-sp(5);
+            }
+
+            .news-title {
+                padding-bottom: md.vw-sp(15);
+            }
+        }
+    }
+}
+
+@include md.rps-sw(pc) {
+    .news {
+        padding: md.vw-pc(100) md.vw-pc(167) md.vw-pc(100) md.vw-pc(118);
+    
+        .news-textarea {
+            display: flex;
+            align-items: center;
+
+            .viewmore-text {
+                margin-right: md.vw-pc(10);
+                padding-bottom: md.vw-pc(6);
+            }
+        }
+
+        .news-container {
+            padding: md.vw-pc(34) 0 0 md.vw-pc(185-118);
+            display: flex;
+            flex-direction: row;
+            gap: md.vw-pc(40);
+    
+            .news-contents {
+    
+                .news-img {
+                    width: md.vw-pc(320);
+                    height: md.vw-pc(230);
+                }
+    
+                .news-date {
+                    padding-top: md.vw-pc(18);
+                }
+    
+                .news-title {
+                    padding-bottom: md.vw-pc(15);
+                }
+            }
+        }
+    }
+}
+
+/*---font---*/
+.news-date {
+    @include md.fontset(md.vw-sp(12), 600, md.vw-sp(50), 0.04em);
+  }
+  
+  .news-title {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(16), 700, md.vw-sp(20), 0.08em);
+  }
+  
+  .news-text {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(12), 400, md.vw-sp(24), 0.08em);
+  }
+  
+  @include md.rps-sw(pc) {
+    .news-date {
+      @include md.fontset(md.vw-pc(14), 600, md.vw-pc(50), 0.04em);
+    }
+    
+    .news-title {
+      @include md.fontset(md.vw-pc(16), 700, md.vw-pc(20), 0.08em);
+    }
+    
+    .news-text {
+      @include md.fontset(md.vw-pc(14), 400, md.vw-pc(24), 0.08em);
+    }
+  }

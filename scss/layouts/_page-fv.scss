@@ -1,0 +1,45 @@
+@use '../bases/variables' as vb;
+@use '../modules/index' as md;
+
+.fv {
+    // @include md.bg-img('/img/importcar-bgi-sp.png');
+    width: 100%;
+    text-align: center;
+    padding: md.vw-sp(82) md.vw-sp(0);
+    
+    .fv-maintitle {
+        padding-bottom: md.vw-sp(10);
+    }
+}
+
+@include md.rps-sw(pc) {
+    .fv {
+        // @include md.bg-img('/img/importcar-bgi-pc.png');
+        padding: md.vw-pc(98) md.vw-pc(0);
+        
+        .fv-maintitle {
+            padding-bottom: md.vw-pc(16);
+        }
+    }
+}
+
+/*---font---*/
+.fv-maintitle {
+    @include md.fontset(md.vw-sp(25), 700, md.vw-sp(30), 0.04em);
+}
+
+.fv-subtitle {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(12), 600, md.vw-sp(16), 0.06em);
+}
+  
+@include md.rps-sw(pc) {
+    .fv-maintitle {
+        @include md.fontset(md.vw-pc(40), 700, md.vw-pc(48), 0.04em);
+    }
+    
+    .fv-subtitle {
+        font-family: vb.$sub-font1;
+        @include md.fontset(md.vw-pc(14), 600, md.vw-pc(19), 0.06em);
+    }
+}

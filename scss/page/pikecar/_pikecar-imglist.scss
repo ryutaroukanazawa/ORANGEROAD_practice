@@ -1,0 +1,162 @@
+@use '../../bases/variables' as vb;
+@use '../../modules/index' as md;
+
+.imglist {
+    width: 100%;
+    padding: 0 md.vw-sp(27) md.vw-sp(30);
+    text-align: center;
+
+    .imglist-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: md.vw-sp(32);
+
+        .imglist-contents {
+            text-align: left;
+            
+            .img-back {
+                width: 100%;
+                height: md.vw-sp(200);
+                display: flex;
+                @include md.fl-center(xy);
+    
+                .imglist-car {
+                    width: 80%;
+                }
+            }
+    
+            .imglist-contents-maintitle {
+                padding-top: md.vw-sp(11);
+            }
+    
+            .imglist-contents-subtitle {
+                padding-top: md.vw-sp(4);
+                padding-bottom: md.vw-sp(20);
+            }
+    
+            .imglist-ul {
+                padding-top: md.vw-sp(20);
+                border-top: 1px solid vb.$black-color;
+    
+                .imglist-li {
+                    display: flex;
+                    gap: md.vw-sp(23);
+    
+                    .imglist-li-title {
+                        width: md.vw-sp(38);
+                    }
+                }
+            }
+        }
+    }
+    
+    .imglist-pageno-ul {
+        display: flex;
+        justify-content: space-between;
+        padding: md.vw-sp(60) md.vw-sp(10) md.vw-sp(40);
+
+        .under-line {
+            width: md.vw-sp(25);
+            border-bottom: 3px solid vb.$orange-color;
+        }
+    }
+}
+
+/*---PC-Layout---*/
+@include md.rps-sw(pc) {
+    .imglist {
+        padding: 0 md.vw-pc(120) md.vw-pc(30);
+    
+        .imglist-container {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: md.vw-pc(50);
+
+            .imglist-contents {
+    
+                .img-back {
+                    height: md.vw-pc(250);
+                }
+        
+                .imglist-contents-maintitle {
+                    padding-top: md.vw-pc(22);
+                }
+        
+                .imglist-contents-subtitle {
+                    padding-top: md.vw-pc(1);
+                    padding-bottom: md.vw-pc(26);
+                }
+        
+                .imglist-ul {
+                    padding-top: md.vw-pc(26);
+        
+                    .imglist-li {
+                        gap: md.vw-pc(60);
+        
+                        .imglist-li-title {
+                            width: md.vw-pc(32);
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .imglist-pageno-ul {
+            padding: md.vw-pc(100) md.vw-pc(400) md.vw-pc(100);
+    
+            .under-line {
+                width: md.vw-pc(25);
+            }
+        }
+    }
+}
+
+/*---font---*/
+.imglist-contents-maintitle {
+    @include md.fontset(md.vw-sp(25), 700, md.vw-sp(30), 0.04em);
+}
+
+.imglist-contents-subtitle {
+    @include md.fontset(md.vw-sp(16), 700, md.vw-sp(19), 0.04em);
+}
+
+.imglist-li-title {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(12), 600, md.vw-sp(30), 0.08em);
+}
+
+.imglist-li-text {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-sp(12), 500, md.vw-sp(30), 0.08em);
+}
+
+.imglist-pageno-li {
+    font-family: vb.$sub-font2;
+    @include md.fontset(md.vw-sp(20), 700, md.vw-sp(30), 0.08em);
+}
+  
+@include md.rps-sw(pc) {
+    .imglist-contents-maintitle {
+        @include md.fontset(md.vw-pc(28), 700, md.vw-pc(34), 0.04em);
+    }
+    
+    .imglist-contents-subtitle {
+        @include md.fontset(md.vw-pc(14), 700, md.vw-pc(17), 0.04em);
+    }
+    
+    .imglist-li-title {
+        font-family: vb.$sub-font1;
+        @include md.fontset(md.vw-pc(14), 600, md.vw-pc(30), 0.08em);
+    }
+    
+    .imglist-li-text {
+        font-family: vb.$sub-font1;
+        @include md.fontset(md.vw-pc(14), 400, md.vw-pc(30), 0.08em);
+    }
+    
+    .imglist-pageno-li {
+        font-family: vb.$sub-font2;
+        @include md.fontset(md.vw-pc(28), 700, md.vw-pc(42), 0.08em);
+    }
+}

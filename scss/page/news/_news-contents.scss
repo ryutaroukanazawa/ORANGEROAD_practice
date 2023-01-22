@@ -1,0 +1,116 @@
+@use '../../bases/variables' as vb;
+@use '../../modules/index' as md;
+
+.contents {
+    width: 100%;
+    padding: md.vw-sp(30) md.vw-sp(27) md.vw-sp(60);
+
+    .contents-pankuzu {
+        padding-bottom: md.vw-sp(30);
+    }
+
+    .news-container {
+        display: grid;
+        justify-items: center;
+        gap: md.vw-sp(39);
+
+        .news-img {
+            width: 100%;
+        }
+
+        .news-title {
+            padding-bottom: md.vw-pc(36);
+        }
+    }
+
+    .imglist-pageno-ul {
+        display: flex;
+        justify-content: space-between;
+        padding: md.vw-sp(60) md.vw-sp(10) md.vw-sp(0);
+        text-align: center;
+
+        .under-line {
+            width: md.vw-sp(25);
+            border-bottom: 3px solid vb.$orange-color;
+        }
+    }
+}
+
+/*---PC-Layout---*/
+@include md.rps-sw(pc) {
+    .contents {
+        padding: md.vw-pc(66) md.vw-pc(120) md.vw-pc(120);
+    
+        .contents-pankuzu {
+            padding-bottom: md.vw-pc(50);
+        }
+    
+        .news-container {
+            gap: md.vw-pc(45);
+            grid-template-columns: 1fr 1fr 1fr;
+    
+            .news-img {
+                width: 100%;
+            }
+    
+            .news-title {
+                padding-bottom: md.vw-pc(15);
+            }
+        }
+    
+        .imglist-pageno-ul {
+            padding: md.vw-pc(100) md.vw-pc(400) md.vw-pc(0);
+    
+            .under-line {
+                width: md.vw-pc(25);
+            }
+        }
+    }
+}
+
+/*---font---*/
+.contents-pankuzu {
+    @include md.fontset(md.vw-sp(12), 700, md.vw-sp(14), 0.04em);
+}
+
+.news-date {
+    @include md.fontset(md.vw-sp(12), 600, md.vw-sp(50), 0.04em);
+  }
+  
+.news-title {
+font-family: vb.$sub-font1;
+@include md.fontset(md.vw-sp(16), 700, md.vw-sp(20), 0.08em);
+}
+
+.news-text {
+font-family: vb.$sub-font1;
+@include md.fontset(md.vw-sp(12), 400, md.vw-sp(24), 0.08em);
+}
+
+.imglist-pageno-li {
+    font-family: vb.$sub-font2;
+    @include md.fontset(md.vw-sp(20), 700, md.vw-sp(30), 0.08em);
+}
+  
+@include md.rps-sw(pc) {
+    .contents-pankuzu {
+        @include md.fontset(md.vw-pc(16), 700, md.vw-pc(19), 0.04em);
+    }
+    
+    .news-date {
+        @include md.fontset(md.vw-pc(14), 600, md.vw-pc(50), 0.04em);
+    }
+      
+    .news-title {
+        @include md.fontset(md.vw-pc(16), 700, md.vw-pc(20), 0.08em);
+    }
+    
+    .news-text {
+        @include md.fontset(md.vw-pc(14), 400, md.vw-pc(24), 0.08em);
+    }
+    
+    .imglist-pageno-li {
+        font-family: vb.$sub-font2;
+        @include md.fontset(md.vw-pc(28), 700, md.vw-pc(42), 0.08em);
+    }
+}

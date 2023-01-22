@@ -1,0 +1,44 @@
+// ===============
+// position → center
+// ===============
+
+// x：横方向中央寄せ
+// y：縦方向中央寄せ
+// xy：縦横方向中央寄せ 
+
+@mixin ps-center($direction) {
+	@if $direction==xy {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	@else if $direction==x {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	@else if $direction==y {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+// ===============
+// display:flex → center
+// ===============
+
+// x：横方向中央寄せ
+// y：縦方向中央寄せ
+// xy：縦横方向中央寄せ 
+
+@mixin fl-center($direction) {
+	@if $direction==xy {
+		justify-content: center;
+		align-items: center;
+	}
+	@else if $direction==x {
+		justify-content: center;
+	}
+	@else if $direction==y {
+		align-items: center;
+	}
+}
