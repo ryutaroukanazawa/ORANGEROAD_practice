@@ -40,11 +40,12 @@
         text-align: center;
 
         .ft-backtotop {
-            width: md.vw-sp(200);
+            width: md.vw-sp(150);
             margin: 0 auto;
             padding-bottom: md.vw-sp(6);
             border-bottom: 6px solid vb.$white-color;
             text-align: left;
+            display: flex;
 
             .up_arrow {
                 display: block;
@@ -53,9 +54,8 @@
                 transform: rotate(-45deg);
                 width: md.vw-sp(10);
                 height: md.vw-sp(10);
-                float: right;
                 margin-top: md.vw-sp(7);
-                margin-right: md.vw-sp(5);
+                margin-left: md.vw-sp(10);
             }
         }
 
@@ -120,13 +120,22 @@
                 height: md.vw-pc(35);
                 order: 2;
                 margin-right: 0;
-    
+                border-bottom: initial;
+                display: initial;
+                
                 .up_arrow {
                     width: md.vw-pc(10);
                     height: md.vw-pc(10);
                     margin-top: md.vw-pc(7);
                     margin-right: md.vw-pc(5);
+                    float: right;
+
                 }
+
+                .bd-bottom {
+                  margin-top: md.vw-pc(4);
+                  background-color: vb.$white-color;
+              }
             }
     
             .ft-copyright {

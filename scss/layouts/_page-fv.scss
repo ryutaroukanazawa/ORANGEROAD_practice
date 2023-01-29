@@ -2,7 +2,6 @@
 @use '../modules/index' as md;
 
 .fv {
-    // @include md.bg-img('/img/importcar-bgi-sp.png');
     width: 100%;
     text-align: center;
     padding: md.vw-sp(82) md.vw-sp(0);
@@ -14,9 +13,8 @@
 
 @include md.rps-sw(pc) {
     .fv {
-        // @include md.bg-img('/img/importcar-bgi-pc.png');
         padding: md.vw-pc(98) md.vw-pc(0);
-        
+
         .fv-maintitle {
             padding-bottom: md.vw-pc(16);
         }

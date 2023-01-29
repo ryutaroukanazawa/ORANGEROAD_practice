@@ -4,7 +4,7 @@
 .lu {
     @include md.bg-img('/img/top-lineup-bgi.png');
     width: 100%;
-    margin-top: 100vh; //あとでheaderの高さ分少なくする
+    margin-top: 100vh;
     padding: 0 md.vw-sp(27);
     text-align: center;
 
@@ -72,6 +72,8 @@
 @include md.rps-sw(pc) {
     .lu {
         padding: 0 md.vw-pc(118);
+        margin-top: 100vh;
+
     
         .section-title {
             padding: md.rem(101) 0 md.rem(66);

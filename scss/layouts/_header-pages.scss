@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     gap: md.vw-sp(25);
+    z-index: 10;
 
     .hd-logo {
         width: md.vw-sp(200);
@@ -25,15 +26,19 @@
 
             .hd-mail {
                 width: md.vw-sp(18);
+                padding-bottom: md.vw-sp(2);
             }
         }
-        
 
         .mobile-menu-icon {
             background-color: unset;
             border: none;
             outline: none !important;
             cursor: pointer;
+        
+            .line-color {
+                background-color: vb.$white-color;
+            }
         
             & > span {
                 background-color: vb.$black-color;
@@ -49,30 +54,33 @@
             }
         }
         
-        .menu-open {
-            background-color: vb.$orange-color;
-        
-            & .mobile-menu-icon {
-                & > span {
-                    background-color: vb.$black-color;
-
-        
-                    &:nth-child(1) {
-                        transition-delay: 70ms;
-                        transform: translateY(11px) rotate(135deg);
-                    }
-                    &:nth-child(2) {
-                        transition-delay: 0s;
-                        transform:  translateX(-18px) scaleX(0);
-                    }
-                    &:nth-child(3) {
-                        transition-delay: 140ms;
-                        transform: translateY(-11px) rotate(-135deg);
-                    }
-                }
+        .hamburger-menu {
+            & > span {
+                background-color: vb.$black-color;
             }
         }
     }
+}
+
+.hamburger-fixed-fv {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    background-color: vb.$beige-color;
+    text-align: center;
+    padding-top: md.vw-sp(100);
+
+    .hamburger-nav {
+        display: flex;
+        text-align: left;
+    }
+}
+
+.hamburger-fixed-hd {
+    position: fixed;
+    z-index: 100;
 }
 
 @include md.rps-sw(pc) {
@@ -91,12 +99,13 @@
             align-items: center;
             gap: md.vw-pc(39);
 
-            .hd-li-normal:nth-child(-n+2) {
+            .hd-li-normal {
                 width: auto;
-                margin: 0 auto;
+                margin: 0;
                 padding-bottom: md.vw-pc(0);
-                border-bottom: 5px solid vb.$orange-color;
+                // border-bottom: 5px solid vb.$orange-color;
                 text-align: left;
+                position: relative;
     
                 .up_arrow {
                     display: block;
@@ -110,8 +119,46 @@
                     margin-left: md.vw-pc(10);
                     margin-right: md.vw-pc(3);
                 }
+
+                .lineup-hoverlist {
+                    width: md.vw-pc(100);
+                    height: md.vw-pc(80);
+                    padding: md.vw-pc(10) md.vw-pc(10);
+                    background-color: vb.$white-color;
+                    opacity: 0;
+                    scale: 0.001;
+                    position: absolute;
+                    top: 150%;
+                    display: flex;
+                    flex-direction: column;
+                    @include md.fl-center(xy);
+                }
+
+                .support-hoverlist {
+                    width: md.vw-pc(170);
+                    height: md.vw-pc(150);
+                    padding: md.vw-pc(10) md.vw-pc(10);
+                    background-color: vb.$white-color;
+                    opacity: 0;
+                    scale: 0.001;
+                    position: absolute;
+                    top: 150%;
+                    display: flex;
+                    flex-direction: column;
+                    @include md.fl-center(xy);
+                }
+
+                .hoverlist-contents {
+                    width: 100%;
+                    padding: md.vw-pc(8) 0;
+                    border-bottom: 1px solid vb.$black-color;
+                }
+
+                .hoverlist-contents:last-child {
+                    border-bottom: initial;
+                }
             }
-    
+
             .hd-li-backcolor {
                 width: md.vw-pc(140);
                 height: md.vw-pc(30);
@@ -121,6 +168,8 @@
 
                 .hd-mail {
                     width: md.vw-pc(18);
+                    padding-bottom: md.vw-pc(2);
+
                 }
             }
         }
@@ -134,4 +183,9 @@
   
   .hd-li-backcolor {
     @include md.fontset(md.vw-pc(14), 600, md.vw-pc(17), 0.04em);
+  }
+
+  .hoverlist-contents {
+    font-family: vb.$sub-font1;
+    @include md.fontset(md.vw-pc(14), 500, md.vw-pc(19), 0.06em);
   }

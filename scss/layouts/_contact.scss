@@ -9,17 +9,21 @@
         @include md.bg-img('/img/com-contact-bgi-sp.png');
         width: 100%;
         text-align: center;
-        padding: md.vw-sp(53) md.vw-sp(65);
+        padding: md.vw-sp(53) md.vw-sp(60) md.vw-sp(80);
 
         .section-title {
             padding-bottom: md.vw-sp(10);
         }
 
+        .contact-title-text {
+            padding-bottom: 30px;
+        }
+
         .contact-link {
             padding-top: md.vw-sp(31);
-            width: md.vw-sp(240);
+            width: md.vw-sp(230);
             margin: 0 auto;
-            padding-bottom: md.vw-sp(6);
+            padding-bottom: md.vw-sp(5);
             border-bottom: 6px solid vb.$white-color;
             text-align: left;
 
@@ -104,14 +108,21 @@
             .contact-link {
                 padding-top: md.vw-pc(31);
                 width: md.vw-pc(300);
-                padding-bottom: md.vw-pc(6);
+                padding-bottom: md.vw-pc(0);
                 margin-right: 0;
+                border-bottom: initial;
+
     
                 .side_arrow {
                     width: md.vw-pc(10);
                     height: md.vw-pc(10);
                     margin-top: md.vw-pc(10);
                     margin-right: md.vw-pc(5);
+                }
+
+                .bd-bottom {
+                    margin-top: md.vw-pc(8);
+                    background-color: vb.$white-color;
                 }
             }
         }

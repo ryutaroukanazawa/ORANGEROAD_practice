@@ -4,6 +4,7 @@
 .mvtitle {
     white-space: nowrap;
     padding: md.vw-sp(30) 0;
+    overflow-x: hidden;
 }
 
 @include md.rps-sw(pc) {

@@ -27,7 +27,7 @@
     
                 .fv-line {
                     display: inline-block;
-                    width: md.vw-sp(76);
+                    width: 0;
                     border-top: 1px solid vb.$white-color;
                     position: absolute;
                     top: 50%;
@@ -59,7 +59,7 @@
                 .fv-scroll-text {
                             
                     .fv-line {
-                        width: md.vw-pc(76);
+                        width: 0;
                         margin-left: md.vw-pc(10);
                     }
                 }

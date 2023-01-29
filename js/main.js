@@ -1,72 +1,494 @@
-class Main {
+/*
+===============
+header nav : position: fixed
+===============
+*/
+const fixed = document.getElementById("hd-id");
+const fixedLineColor = document.getElementsByClassName("fixed-line-color");
+let fixedLineColor_len = fixedLineColor.length;
+const fixedFontColor = document.getElementsByClassName("fixed-font-color");
+let fixedFontColor_len = fixedFontColor.length;
+const fixedArrowColor = document.getElementsByClassName("fixed-arrow-color");
+let fixedArrowColor_len = fixedArrowColor.length;
+let activePath = location.pathname
 
-    #observers = [];
+window.addEventListener('scroll', function () {
+  
+  // headerの高さを取得
+  let hd_height = $("#hd-id").height();
 
-    constructor() {
-        this.header = document.querySelector('.header');
-        this.hero = new HeroSlider('.swiper');
-        this.sides = document.querySelectorAll('.side');
-        this.#init();
+  // headerが画面内に入っている & headerの高さを越したら
+    if (hd_height <= window.pageYOffset) {
+      fixed.style.position = "fixed";
+      fixed.style.backgroundColor = "white";
+
+      for (let i = 0; i < fixedLineColor_len; i++) {
+        fixedLineColor[i].style.backgroundColor = "black";
     }
 
-    #init() {
-        new MobileMenu;
-        Pace.on('done', this.#scrollInit.bind(this));
+    for (i = 0; i < fixedFontColor_len; i++) {
+        fixedFontColor[i].style.color = "black";
     }
 
-    destroy() {
-        this.#observers.forEach(so => so.destroy());
+    for (i = 0; i < fixedArrowColor_len; i++) {
+        fixedArrowColor[i].style.borderTopColor = "black";
+        fixedArrowColor[i].style.borderRightColor = "black";
     }
 
-    #scrollInit() {
-        this.#observers.push(
-            new ScrollObserver('#main-content', this.#sideAnimation.bind(this), { once: false, rootMargin: "-300px 0px" }),
-            new ScrollObserver('.nav-trigger', this.#navAnimation.bind(this), { once: false }),
-            new ScrollObserver('.swiper', this.#toggleSlideAnimation.bind(this), { once: false }),
-            new ScrollObserver('.cover-slide', this.#inviewAnimation),
-            new ScrollObserver('.appear', this.#inviewAnimation),
-            new ScrollObserver('.tween-animate-title', this.#textAnimation)
-        )
-        console.log(this.#observers);
-    }
-
-    #toggleSlideAnimation(el, inview) {
-        if(inview) {
-            this.hero.start();
+    } else {
+        if (activePath === "/top.html") {
+            fixed.style.position = "absolute";
         } else {
-            this.hero.stop();
+            fixed.style.position = "initial";
         }
+      fixed.style.backgroundColor = "initial";
+
+      for (i = 0; i < fixedLineColor_len; i++) {
+        fixedLineColor[i].style.backgroundColor = "white";
     }
 
-    #textAnimation(el, inview) {
-        if(inview) {
-            const ta = new TweenTextAnimation(el);
-            ta.animate();
+        for (i = 0; i < fixedFontColor_len; i++) {
+            fixedFontColor[i].style.color = "white";
         }
-    }
 
-    #navAnimation(el, inview) {
-        if(inview) {
-            this.header.classList.remove('triggered');
-        } else {
-            this.header.classList.add('triggered');
+        for (i = 0; i < fixedArrowColor_len; i++) {
+            fixedArrowColor[i].style.borderTopColor = "white";
+            fixedArrowColor[i].style.borderRightColor = "white";
         }
     }
+});
 
-    #sideAnimation(el, inview) {
-        if(inview) {
-            this.sides.forEach(side => side.classList.add('inview'));
-        } else {
-            this.sides.forEach(side => side.classList.remove('inview'));
-        }
-    }
+/*
+===============
+Opening-Animation
+===============
+*/
+const jsLoaderBg = ".js-loader-bg";
+const opTitle = ".op-title";
+const jsDot = ".js-loader-dot-wrap > span";
+const jsText = ".js-mv_title-item span";
+const jsHeader = ".js-header";
 
-    #inviewAnimation(el, inview) {
-        if(inview) {
-            el.classList.add('inview');
-        } else {
-            el.classList.remove('inview');
+if (activePath === "/top.html") {
+
+    /* 文字列を分割しspanで囲む */
+    (function () {
+        const jsText = document.querySelectorAll(".js-mv_title-item");
+        jsText.forEach((target) => {
+        let newText = "";
+        const text = target.textContent;
+        const result = text.split("");
+        for (let i = 0; i < result.length; i++) {
+            newText += "<span>" + result[i] + "</span>";
         }
+        target.innerHTML = newText;
+        });
+    })();
+
+    gsap.set(jsText, {
+        opacity: 0,
+        y: 30,
+    });
+    gsap.set(jsHeader, {
+        opacity: 0,
+        y: -50,
+    });
+    gsap.set(jsDot, {
+        opacity: 0,
+        y: -50,
+    });
+    gsap.set(opTitle, {
+        opacity: 0,
+    });
+
+    const openingTl = gsap.timeline();
+
+    /* ドットが左から0.5秒おきに降ってくる */
+    openingTl.to(
+    jsDot,
+    {
+        opacity: 1,
+        y: 0,
+        duration: 1.0,
+        delay: 0.8,
+        stagger: {
+        amount: 0.5, //0.5秒おきに
+        from: "start", // 左から
+        ease: "power4.inOut",
+        },
+        repeat: 2,
+    })
+
+    /* opening titleの文字を消す */
+    .to(opTitle, {
+        opacity: 1,
+    }, "-=5.0")
+
+    /* opening titleの文字を消す */
+    .to(opTitle, {
+        opacity: 0,
+    })
+
+    /* ドットを消す */
+    .to(jsDot, {
+    opacity: 0,
+    }, "-=0.5")
+    
+    /* ドットが消えた後カーテンが上から開く */
+    .to(jsLoaderBg, {
+    y: "100%",
+    delay: 0.5,
+    })
+
+    /* 文字が1文字ずつ登場 */
+    .to(jsText, {
+        duration: 1.5,
+        opacity: 1,
+        y: 0,
+        stagger: {
+            amount: 1.5,
+            from: "start",
+            ease: "sine.in",
+        },
+        },
+    "-=0.1"  // 前のアニメーションが完了する0.1秒前に実行する書き方
+    )
+
+    /* 文字が登場後トップページが上から参上！！ */
+    .to(jsHeader, {
+    opacity: 1,
+    y: 0,
+    });
+};
+/*
+===============
+hamburger-menu
+===============
+*/
+const hamburgerTl = new TimelineLite({paused:true});
+hamburgerTl.to(".hamburger-line1", {
+        y: 11,
+        rotation: 45,
+        duration: 0.2,
+        ease: "sine.out",
+    })
+    .to(".hamburger-line3", {
+        y: -11,
+        rotation: -45,
+        duration: 0.2,
+        ease: "sine.out",
+    }, "-=0.2")
+    .to(".hamburger-line2", {
+        opacity: 0,
+        duration: 0.2,
+        ease: "sine.out",
+        onComplete: () => {
+            console.log("Complete!")
+          },
+    }, "-=0.2")
+    .to(".fv", {
+        opacity: 0,
+    })
+
+    // ハンバーガーメニューをクリックで、アニメーションの再生・逆再生を制御
+    const hamburgerOpen = document.getElementById("hambuerger-menu-open");
+    const hamburgerHeader = document.getElementById("hd-id");
+    const hamburgerButton = document.getElementById("hamburger-button");
+
+    $(".mobile-menu-icon").click(function(){
+    if (hamburgerOpen.classList.contains("hamburger-fixed-fv")) {
+        hamburgerTl.reverse();
+    } else {
+        hamburgerTl.play();
     }
-}
-const main = new Main;
+    hamburgerOpen.classList.toggle("hamburger-fixed-fv");
+    hamburgerHeader.classList.toggle("hamburger-fixed-hd");
+    hamburgerButton.classList.toggle("hamburger-menu");
+    });
+
+/*
+===============
+all-times-animation
+===============
+*/
+// move-titleのアニメーション
+gsap.fromTo(
+    ".js-move",
+    {
+        x: "100%",
+    },
+    {
+        x: "-80%",
+        duration: 10,
+        repeat: -1,
+        ease: Power0.easeNone,
+    }
+);
+
+// スクロールラインのアニメーション
+gsap.to(
+    ".js-scroll",
+    {
+        width: "50%",
+        duration: 0.7,
+        repeat: -1,
+        ease: Power1.easeNone,
+        repeatDelay: 0.7,
+    }
+)
+
+/*
+===============
+hover-action
+===============
+*/
+let gsap_Class = ".hover-move";
+$(gsap_Class).each(function (index, element){
+    const tl = new TimelineLite({paused:true});
+    tl.to(element, {
+            scale: 1.15,
+            duration: 0.2,
+            ease: "sine.out",
+        })
+    element.animation = tl;
+    })
+    
+    $(gsap_Class).mouseenter(function(){
+    this.animation.play();
+    })
+    
+    $(gsap_Class).mouseleave(function(){
+    this.animation.reverse();
+});
+
+gsap_Class = ".hover-move-line";
+$(gsap_Class).each(function (index, element){
+    const tl = new TimelineLite({paused:true});
+    tl.to(element, {
+            scale: 1.15,
+            duration: 0.2,
+            ease: "sine.out",
+        })
+    .to($(element).find(".bd-bottom"), {
+        duration: 0.2,
+        ease: "sine.out",
+        width: "100%",
+    })
+    element.animation = tl;
+    })
+    
+    $(gsap_Class).mouseenter(function(){
+    this.animation.play();
+    })
+    
+    $(gsap_Class).mouseleave(function(){
+    this.animation.reverse();
+});
+
+gsap_Class = ".hover-move-text";
+$(gsap_Class).each(function (index, element){
+    const tl = new TimelineLite({paused:true});
+    tl.to($(element).find(".gsap-move"), {
+            scale: 1.1,
+            duration: 0.2,
+            ease: "sine.out",
+        })
+    element.animation = tl;
+    })
+    
+    $(gsap_Class).mouseenter(function(){
+    this.animation.play();
+    })
+    
+    $(gsap_Class).mouseleave(function(){
+    this.animation.reverse();
+});
+
+gsap_Class = ".hover-move-line-text";
+$(gsap_Class).each(function (index, element){
+    const tl = new TimelineLite({paused:true});
+    tl.to($(element).find(".gsap-move"), {
+            scale: 1.1,
+            duration: 1,
+            ease: "steps(12)",
+            repeat: -1,
+        })
+    .to($(element).find(".bd-bottom"), {
+        duration: 0.2,
+        ease: "sine.out",
+        width: "100%",
+    }, 0)
+    element.animation = tl;
+    })
+    
+    $(gsap_Class).mouseenter(function(){
+    this.animation.play();
+    })
+    
+    $(gsap_Class).mouseleave(function(){
+    this.animation.seek(1);
+    this.animation.reverse();
+});
+
+
+gsap_Class = ".hover-move-line-down";
+$(gsap_Class).each(function (index, element){
+    const tl = new TimelineLite({paused:true});
+    tl.to(element, {
+            scale: 1.15,
+            duration: 0.2,
+            ease: "sine.out",
+        })
+    .to($(element).find(".bd-bottom"), {
+        duration: 0.2,
+        ease: "sine.out",
+        width: "100%",
+    })
+    .to($(element).find(".up_arrow"), {
+        duration: 0.2,
+        ease: "sine.out",
+        rotation: 135,
+        y: "-50%",
+    })
+    .to($(element).find(".lineup-hoverlist"), {
+        duration: 0.2,
+        ease: "sine.out",
+        scale: 1,
+        opacity: 0.9,
+    }, "-=0.2")
+    .to($(element).find(".support-hoverlist"), {
+        duration: 0.2,
+        ease: "sine.out",
+        scale: 1,
+        opacity: 0.9,
+    }, "-=0.2")
+    element.animation = tl;
+    })
+    
+    $(gsap_Class).mouseenter(function(){
+    this.animation.play();
+    })
+    
+    $(gsap_Class).mouseleave(function(){
+    this.animation.reverse();
+});
+
+gsap_Class = ".hover-move-line-right";
+$(gsap_Class).each(function (index, element){
+    const tl = new TimelineLite({paused:true});
+    tl.to(element, {
+            scale: 1.15,
+            duration: 0.2,
+            ease: "sine.out",
+        })
+    .to($(element).find(".bd-bottom"), {
+        duration: 0.2,
+        ease: "sine.out",
+        width: "100%",
+    })
+    .to($(element).find(".side_arrow"), {
+        duration: 0.2,
+        ease: "sine.out",
+        rotation: 405,
+        x: "-300%",
+    })
+    .to($(element).find(".side_arrow"), {
+        duration: 1,
+        ease: "sine.out",
+        x: "0",
+        repeat: -1
+    })
+    element.animation = tl;
+    })
+    
+    $(gsap_Class).mouseenter(function(){
+    this.animation.play();
+    })
+    
+    $(gsap_Class).mouseleave(function(){
+    this.animation.seek(1);
+    this.animation.reverse();
+});
+
+gsap_Class = ".hover-move-line-up";
+$(gsap_Class).each(function (index, element){
+    const tl = new TimelineLite({paused:true});
+    tl.to(element, {
+            scale: 1.15,
+            duration: 0.2,
+            ease: "sine.out",
+        })
+    .to($(element).find(".bd-bottom"), {
+        duration: 0.2,
+        ease: "sine.out",
+        width: "100%",
+    })
+    .to($(element).find(".up_arrow"), {
+        duration: 0.2,
+        ease: "sine.out",
+        rotation: 315,
+        y: "50%",
+    })
+    .to($(element).find(".up_arrow"), {
+        duration: 1,
+        ease: "sine.out",
+        y: "-50%",
+        repeat: -1
+    })
+    element.animation = tl;
+    })
+    
+    $(gsap_Class).mouseenter(function(){
+    this.animation.play();
+    })
+    
+    $(gsap_Class).mouseleave(function(){
+    this.animation.seek(1);
+    this.animation.reverse();
+});
+
+gsap_Class = ".hover-right";
+$(gsap_Class).each(function (index, element){
+    const tl = new TimelineLite({paused:true});
+    tl.to($(element).find(".contact-side-arrow-value"), {
+        duration: 0.2,
+        ease: "sine.out",
+        rotation: 405,
+        x: "-80%",
+    })
+    .to($(element).find(".contact-side-arrow-value"), {
+        duration: 1,
+        ease: "sine.out",
+        x: "80%",
+        repeat: -1
+    })
+    element.animation = tl;
+    })
+    
+    $(gsap_Class).mouseenter(function(){
+    this.animation.play();
+    })
+    
+    $(gsap_Class).mouseleave(function(){
+    this.animation.seek(1);
+    this.animation.reverse();
+});
+
+gsap_Class = ".hover-transparent";
+$(gsap_Class).each(function (index, element){
+    const tl = new TimelineLite({paused:true});
+    tl.to(element, {
+            opacity: 0.6,
+            duration: 0.2,
+            ease: "sine.out",
+        })
+    element.animation = tl;
+    })
+    
+    $(gsap_Class).mouseenter(function(){
+    this.animation.play();
+    })
+    
+    $(gsap_Class).mouseleave(function(){
+    this.animation.reverse();
+});

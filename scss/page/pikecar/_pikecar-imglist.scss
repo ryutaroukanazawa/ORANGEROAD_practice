@@ -55,11 +55,6 @@
         display: flex;
         justify-content: space-between;
         padding: md.vw-sp(60) md.vw-sp(10) md.vw-sp(40);
-
-        .under-line {
-            width: md.vw-sp(25);
-            border-bottom: 3px solid vb.$orange-color;
-        }
     }
 }
 
@@ -104,10 +99,6 @@
 
         .imglist-pageno-ul {
             padding: md.vw-pc(100) md.vw-pc(400) md.vw-pc(100);
-    
-            .under-line {
-                width: md.vw-pc(25);
-            }
         }
     }
 }

@@ -27,6 +27,19 @@ body {
 
 /*
 ===============
+Link-hover
+===============
+*/
+a {
+  cursor:pointer;
+}
+
+.point {
+  cursor:pointer;
+}
+
+/*
+===============
 Color-Set
 ===============
 */
@@ -120,15 +133,107 @@ Common-layout
     width: md.vw-pc(210);
     padding-bottom: md.vw-pc(0);
     padding-top: md.vw-pc(12);
-  
+  border-bottom: initial;
+
     .side_arrow {
       width: md.vw-pc(10);
       height: md.vw-pc(10);
-      margin-top: md.vw-pc(8);
+      margin-top: md.vw-pc(7);
       margin-right: md.vw-pc(5);
     }
   }
+
+  .bd-bottom {
+    display: block;
+    width: 0;
+    height: md.vw-pc(3);
+    background-color: vb.$orange-color;
+  }
 }
+
+/*
+===============
+Opening-Animation
+===============
+*/
+.c-loader-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: vb.$orange-color;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+
+  .op-title {
+    position: absolute;
+    top: 42%;
+    left: 20%;
+  }
+
+  .c-loader-dot {
+    display: inline-flex;
+    align-items: center;
+    justify-content: start;
+    pointer-events: none;
+
+    span {
+      display: block;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: vb.$white-color;
+    }
+
+    span + span {
+      margin-left: 3rem;
+    }
+  }
+}
+
+/* テキスト */
+.l-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+@include md.rps-sw(pc) {
+  .c-loader-bg {
+  
+    .op-title {
+      top: 40%;
+      left: 42%;
+    }
+  
+    .c-loader-dot {
+  
+      span {
+        display: block;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+  
+  /* テキスト */
+  .l-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
 
 /*
 ===============
@@ -137,6 +242,14 @@ Font-Set
 */
 
 /*---Common---*/
+.op-title {
+  @include md.fontset(md.vw-sp(30), 700, md.vw-sp(30), 0.06em);
+}
+
+.js-mv_title-item {
+  @include md.fontset(md.vw-sp(35), 700, md.vw-sp(70), 0.06em);
+}
+
 .section-title {
   @include md.fontset(md.vw-sp(45), 700, md.vw-sp(55), 0.06em);
 }
@@ -146,6 +259,14 @@ Font-Set
 }
 
 @include md.rps-sw(pc) {
+  .op-title {
+    @include md.fontset(md.vw-pc(30), 700, md.vw-pc(30), 0.06em);
+  }
+
+  .js-mv_title-item {
+    @include md.fontset(md.vw-pc(60), 700, md.vw-pc(30), 0.06em);
+  }
+
   .section-title {
     @include md.fontset(md.vw-pc(60), 700, md.vw-pc(73), 0.06em);
   }

@@ -9,27 +9,68 @@
     <link rel="stylesheet" href="/css/top.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- jQuery CDN -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   </head>
 
   <body>
+    <!------------START Opening Animation---------->
+    <div class="c-loader-bg js-loader-bg">
+      <div class="c-loader-dot js-loader-dot-wrap">
+        <p class="op-title white-text">Now Loading</p>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="l-inner">
+      <div class="c-mv_title-wrap">
+        <div class="c-mv_title">
+          <p class="c-mv_title-item js-mv_title-item orange-text">Welcome to "ORANGEROAD"</p>
+        </div>
+      </div>
+    </div>
+
+    <!------------START HanburgerMenu-Open---------->
+    <div id="hambuerger-menu-open">
+      <!-- <p>ここにハンバーガーメニューを開いた時のデザイン！</p>
+        <div class="hamburger-nav">
+          <ul class="hamburger-ul">
+            <li class="hamburger-li">LINE-UP</li>
+            <li class="hamburger-li-child"><a href="pages/importcar.html">- 輸入車</a></li>
+            <li class="hamburger-li-child"><a href="pages/pikecar.html">- パイクカー</a></li>
+            <li class="hamburger-li"><a href="pages/news.html">NEWS</a></li>
+            <li class="hamburger-li"><a href="pages/company.html">COMPANY</a></li>
+            <li class="hamburger-li"><a href="pages/contact.html">CONTACT</a></li>
+            <li class="hamburger-li"><a href="">PRIVACY POLICY</a></li>
+          </ul>
+  
+          <ul class="hamburger-ul">
+            <li class="hamburger-li"><a href="pages/support.html">SUPPORT</a></li>
+            <li class="hamburger-li-child"><a href="pages/support.html">- 納車までの流れ</a></li>
+            <li class="hamburger-li-child"><a href="pages/support.html">- 整備・修理</a></li>
+            <li class="hamburger-li-child"><a href="pages/support.html">- アフターメンテナンス</a></li>
+            <li class="hamburger-li-child"><a href="pages/support.html">- 下取り買取</a></li>
+          </ul>
+        </div> -->
+    </div>
+    
     <!------------START HEADER---------->
-    <header class="hd white-text">
-      <h1 class="hd-title">
-        <img src="img/header-mainlogo.png" alt="ORANGE ROADのメインロゴ画像" class="hd-logo">
-      </h1>
+    <header id="hd-id" class="hd white-text js-header">
+      <a href="top.html" class="hover-move">
+        <h1 class="hd-title">
+          <img src="/img/header-mainlogo.png" alt="ORANGE ROADのメインロゴ画像" class="hd-logo">
+        </h1>
+      </a>
 
       <nav class="hd-nav white-text">
         <div class="sp">
           <ul class="hd-ul">
-            <li class="hd-li-backcolor orange-white-cv"><img src="img/header-mailicon.png" alt="メールのアイコン画像" class="hd-mail"></li>
+            <a href="pages/contact.html"><li class="hd-li-backcolor orange-white-cv"><img src="/img/header-mailicon.png" alt="メールのアイコン画像" class="hd-mail"></li></a>
             <li class="hamburger-menu">
-              <button class="mobile-menu-icon" onclick="document.querySelector('body').classList.toggle('menu-open');">
-                <span></span>
-                <span></span>
-                <span></span>
+              <button id="hamburger-button" class="mobile-menu-icon">
+                <span class="hamburger-line1 fixed-line-color"></span>
+                <span class="hamburger-line2 fixed-line-color"></span>
+                <span class="hamburger-line3 fixed-line-color"></span>
               </button>
             </li>
           </ul>
@@ -37,11 +78,32 @@
 
         <div class="pc">
           <ul class="hd-ul">
-            <li class="hd-li-normal">LINE-UP<span class="up_arrow"></span></li>
-            <li class="hd-li-normal">SUPPORT<span class="up_arrow"></span></li>
-            <li class="hd-li-normal">NEWS</li>
-            <li class="hd-li-normal">COMPANY</li>
-            <li class="hd-li-backcolor orange-white-cv"><img src="img/header-mailicon.png" alt="メールのアイコン画像" class="hd-mail">CONTACT</li>
+            <li class="hd-li-normal hover-move-line-down fixed-font-color">LINE-UP<span class="up_arrow fixed-arrow-color"></span><span class="bd-bottom"></span>
+              <div class="lineup-hoverlist">
+                <p class="hoverlist-contents black-text hover-transparent"><a href="pages/importcar.html">輸入車</a></p>
+                <p class="hoverlist-contents black-text hover-transparent"><a href="pages/pikecar.html">パイクカー</a></p>
+              </div>
+            </li>
+            <li class="hd-li-normal hover-move-line-down fixed-font-color"><a href="pages/support.html">SUPPORT<span class="up_arrow fixed-arrow-color"></span><span class="bd-bottom"></span></a>
+              <div class="support-hoverlist">
+                <p class="hoverlist-contents black-text hover-transparent"><a href="pages/support.html#roadmap-id">納車までの流れ</a></p>
+                <p class="hoverlist-contents black-text hover-transparent"><a href="pages/support.html#support1-id">整備・修理</a></p>
+                <p class="hoverlist-contents black-text hover-transparent"><a href="pages/support.html#support2-id">下取り買取</a></p>
+                <p class="hoverlist-contents black-text hover-transparent"><a href="pages/support.html#support3-id">アフターメンテナンス</a></p>
+              </div>
+            </li>
+            <li class="hd-li-normal hover-move-line fixed-font-color">
+              <a href="pages/news.html">NEWS<span class="bd-bottom"></span></a>
+            </li>
+            <li class="hd-li-normal hover-move-line fixed-font-color">
+              <a href="pages/company.html">COMPANY<span class="bd-bottom"></span></a>
+            </li>
+            <a href="pages/contact.html">
+              <li class="hd-li-backcolor hover-move orange-white-cv">
+                <img src="/img/header-mailicon.png" alt="メールのアイコン画像" class="hd-mail">
+                CONTACT
+              </li>
+            </a>
           </ul>
         </div>
       </nav>
@@ -50,55 +112,61 @@
     <!------------START main---------->
     <main>
       <!------------START fv---------->
-      <section class="fv">
+      <section id="fv-id" class="fv js-header">
         <div class="fv-position">
           <div class="fv-scroll">
-            <p class="fv-scroll-text white-text">SCROLL<span class="fv-line"></span></p>
+            <p class="fv-scroll-text white-text">SCROLL<span class="fv-line js-scroll"></span></p>
           </div>
         </div>
 
-        <img src="img/com-youtubelink-sp.png" alt="YouTubeへのリンク画像" class="fv-youtube sp">
-        <img src="img/com-youtubelink-pc.png" alt="YouTubeへのリンク画像" class="fv-youtube pc">
+        <a href="https://www.youtube.com/channel/UCnsAzRCFWFAJHKhLQMtRLIw" class="hover-move"><img src="img/com-youtubelink-sp.png" alt="YouTubeへのリンク画像" class="fv-youtube sp"></a>
+        <a href="https://www.youtube.com/channel/UCnsAzRCFWFAJHKhLQMtRLIw"><img src="img/com-youtubelink-pc.png" alt="YouTubeへのリンク画像" class="fv-youtube pc hover-move"></a>
       </section>
 
       <!------------START LINEUP---------->
-      <section class="lu">
+      <section id="lu-id" class="lu">
         <h2 class="section-title orange-text">LINE-UP</h2>
 
         <div class="lu-container">
           <div class="lu-carlist">
             <div class="lu-carlist-text">
               <h3 class="lu-carlist-title">IMPORT CAR</h3><span class="lu-carlist-title-jp">輸入車</span>
-              <p class="viewmore-text pc">VIEW MORE<span class="side_arrow"></span></p>
+              <a href="pages/importcar.html" class="viewmore-text pc hover-move-line-right">VIEW MORE<span class="side_arrow"></span><span class="bd-bottom"></span></a href="">
             </div>
 
             <div class="lu-carlist-img">
-              <div class="lu-carlist-img-bg orange-black-cv">
-                <img src="img/com-importcar1.png" alt="" class="lu-car-img">
-                <div class="lu-carlist-img-title">
-                  <h4 class="lu-carlist-img-name">PAO</h4>
-                  <p class="lu-carlist-img-text">NISSAN PAO CANVAS TOP</p>
+              <a href="pages/cardetail.html">
+                <div class="lu-carlist-img-bg orange-black-cv">
+                  <img src="img/com-importcar1.png" alt="" class="lu-car-img hover-move">
+                  <div class="lu-carlist-img-title">
+                    <h4 class="lu-carlist-img-name">PAO</h4>
+                    <p class="lu-carlist-img-text">NISSAN PAO CANVAS TOP</p>
+                  </div>
+                </div>
+              </a>
+
+              <a href="pages/cardetail.html">
+                <div class="lu-carlist-img-bg orange-black-cv">
+                  <img src="img/com-importcar2.png" alt="" class="lu-car-img hover-move">
+                  <div class="lu-carlist-img-title">
+                    <h4 class="lu-carlist-img-name">PAO</h4>
+                    <p class="lu-carlist-img-text">NISSAN PAO CANVAS TOP</p>
+                  </div>
+                </div>
+  
+
+              <a href="pages/cardetail.html">
+                <div class="lu-carlist-img-bg orange-black-cv">
+                  <img src="img/com-importcar3.png" alt="" class="lu-car-img hover-move">
+                  <div class="lu-carlist-img-title">
+                    <h4 class="lu-carlist-img-name">PAO</h4>
+                    <p class="lu-carlist-img-text">NISSAN PAO CANVAS TOP</p>
+                  </div>
                 </div>
               </div>
+              </a>
 
-              <div class="lu-carlist-img-bg orange-black-cv">
-                <img src="img/com-importcar2.png" alt="" class="lu-car-img">
-                <div class="lu-carlist-img-title">
-                  <h4 class="lu-carlist-img-name">PAO</h4>
-                  <p class="lu-carlist-img-text">NISSAN PAO CANVAS TOP</p>
-                </div>
-              </div>
-
-              <div class="lu-carlist-img-bg orange-black-cv">
-                <img src="img/com-importcar3.png" alt="" class="lu-car-img">
-                <div class="lu-carlist-img-title">
-                  <h4 class="lu-carlist-img-name">PAO</h4>
-                  <p class="lu-carlist-img-text">NISSAN PAO CANVAS TOP</p>
-                </div>
-              </div>
-            </div>
-
-            <p class="viewmore-text sp">VIEW MORE<span class="side_arrow"></span></p>
+            <a href="pages/importcar.html" class="viewmore-text sp">VIEW MORE<span class="side_arrow"></span></a>
 
           </div>
           
@@ -106,36 +174,42 @@
           
             <div class="lu-carlist-text">
               <h3 class="lu-carlist-title">PIKE CAR</h3><span class="lu-carlist-title-jp">パイクカー</span>
-              <p class="viewmore-text pc">VIEW MORE<span class="side_arrow"></span></p>
+              <a href="pages/pikecar.html" class="viewmore-text pc hover-move-line-right">VIEW MORE<span class="side_arrow"></span><span class="bd-bottom"></span></a href="">
             </div>
 
             <div class="lu-carlist-img">
-              <div class="lu-carlist-img-bg green-black-cv">
-                <img src="img/com-pikecar1.png" alt="" class="lu-car-img">
-                <div class="lu-carlist-img-title">
-                  <h4 class="lu-carlist-img-name">PAO</h4>
-                  <p class="lu-carlist-img-text">NISSAN PAO CANVAS TOP</p>
+              <a href="pages/cardetail.html">
+                <div class="lu-carlist-img-bg green-black-cv">
+                  <img src="img/com-pikecar1.png" alt="" class="lu-car-img hover-move">
+                  <div class="lu-carlist-img-title">
+                    <h4 class="lu-carlist-img-name">PAO</h4>
+                    <p class="lu-carlist-img-text">NISSAN PAO CANVAS TOP</p>
+                  </div>
                 </div>
-              </div>
+              </a>
 
-              <div class="lu-carlist-img-bg green-black-cv">
-                <img src="img/com-importcar2.png" alt="" class="lu-car-img">
-                <div class="lu-carlist-img-title">
-                  <h4 class="lu-carlist-img-name">PAO</h4>
-                  <p class="lu-carlist-img-text">NISSAN PAO CANVAS TOP</p>
+              <a href="pages/cardetail.html">
+                <div class="lu-carlist-img-bg green-black-cv">
+                  <img src="img/com-importcar2.png" alt="" class="lu-car-img hover-move">
+                  <div class="lu-carlist-img-title">
+                    <h4 class="lu-carlist-img-name">PAO</h4>
+                    <p class="lu-carlist-img-text">NISSAN PAO CANVAS TOP</p>
+                  </div>
                 </div>
-              </div>
+              </a>
 
-              <div class="lu-carlist-img-bg green-black-cv">
-                <img src="img/com-importcar3.png" alt="" class="lu-car-img">
-                <div class="lu-carlist-img-title">
-                  <h4 class="lu-carlist-img-name">PAO</h4>
-                  <p class="lu-carlist-img-text">NISSAN PAO CANVAS TOP</p>
+              <a href="pages/cardetail.html">
+                <div class="lu-carlist-img-bg green-black-cv">
+                  <img src="img/com-importcar3.png" alt="" class="lu-car-img hover-move">
+                  <div class="lu-carlist-img-title">
+                    <h4 class="lu-carlist-img-name">PAO</h4>
+                    <p class="lu-carlist-img-text">NISSAN PAO CANVAS TOP</p>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
 
-            <p class="viewmore-text sp">VIEW MORE<span class="side_arrow"></span></p>
+            <a href="pages/pikecar.html"><p class="viewmore-text sp">VIEW MORE<span class="side_arrow"></span></p></a>
 
           </div>
         </div>
@@ -143,35 +217,39 @@
 
       <!------------START LINKLIST---------->
       <section class="link white-text">
-        <div class="link-box orange-white-cv">
-          <img src="img/com-youtubeicon1.png" alt="" class="link-ytlogo">
-          <p class="link-box-text-md">動画でCHECK!</p>
+        <a href="https://www.youtube.com/channel/UCnsAzRCFWFAJHKhLQMtRLIw" class="link-box orange-white-cv hover-move-text">
+          <img src="img/com-youtubeicon1.png" alt="" class="link-ytlogo gsap-move">
+          <p class="link-box-text-md gsap-move">動画でCHECK!</p>
+        </a>
+
+        <div class="link-box">
+          <a href="pages/importcar.html" class="hover-move-text">
+            <p class="link-box-text-lg gsap-move">IMPORT CAR</p>
+            <p class="link-box-text-sm gsap-move">輸入車</p>
+          </a>
+
+          <a href="https://www.youtube.com/channel/UCnsAzRCFWFAJHKhLQMtRLIw" class="link-box-under orange-white-cv hover-move-text">
+            <img src="img/com-youtubeicon2.png" alt="" class="yticon gsap-move">
+            <p class="link-box-under-text gsap-move">CHECK!</p>
+          </a>
         </div>
 
         <div class="link-box">
-          <p class="link-box-text-lg">IMPORT CAR</p>
-          <p class="link-box-text-sm">輸入車</p>
+          <a href="pages/pikecar.html" class="hover-move-text">
+            <p class="link-box-text-lg gsap-move">PIKE CAR</p>
+            <p class="link-box-text-sm gsap-move">パイクカー</p>
+          </a>
 
-          <div class="link-box-under orange-white-cv">
-            <img src="img/com-youtubeicon2.png" alt="" class="yticon">
-            <p class="link-box-under-text">CHECK!</p>
-          </div>
-        </div>
-
-        <div class="link-box">
-          <p class="link-box-text-lg">PIKE CAR</p>
-          <p class="link-box-text-sm">パイクカー</p>
-
-          <div class="link-box-under green-white-cv">
-            <img src="img/com-youtubeicon2.png" alt="" class="yticon">
-            <p class="link-box-under-text">CHECK!</p>
-          </div>
+          <a href="https://www.youtube.com/channel/UCnsAzRCFWFAJHKhLQMtRLIw" class="link-box-under green-white-cv hover-move-text">
+            <img src="img/com-youtubeicon2.png" alt="" class="yticon gsap-move">
+            <p class="link-box-under-text gsap-move">CHECK!</p>
+          </a>
         </div>
       </section>
 
       <!------------START MOVETITLE---------->
       <section class="mvtitle orange-text">
-        <p class="mvtitle-text">ORANGE ROAD</p>
+        <p class="mvtitle-text js-move">ORANGE ROAD</p>
       </section>
 
       <!------------START CONCEPT---------->
@@ -195,30 +273,30 @@
 
         <div class="support-subtitle">
           <h3 class="support-subtitle-text">ORANGE ROADの<span class="support-subtitle-big orange-text">3</span>つの<br class="sp">サポート！</h3>
-          <p class="viewmore-text pc">VIEW MORE<span class="side_arrow"></span></p>
+          <a href="pages/support.html" class="viewmore-text pc hover-move-line-right">VIEW MORE<span class="side_arrow"></span><span class="bd-bottom"></span></a>
         </div>
 
         <div class="support-container">
-          <div class="support-contents">
-            <img src="img/top-support1.png" alt="" class="support-img">
-            <h4 class="support-contents-title orange-white-cv">整備 / 修理</h4>
+          <div class="support-contents hover-move-text">
+            <img src="img/top-support1.png" alt="" class="support-img gsap-move">
+            <h4 class="support-contents-title orange-white-cv gsap-move">整備 / 修理</h4>
             <p class="support-contents-text">6つの修理・整備ポイント！</p>
           </div>
 
-          <div class="support-contents">
-            <img src="img/top-support2.png" alt="" class="support-img">
-            <h4 class="support-contents-title green-white-cv">下取り買取</h4>
+          <div class="support-contents hover-move-text">
+            <img src="img/top-support2.png" alt="" class="support-img gsap-move">
+            <h4 class="support-contents-title green-white-cv gsap-move">下取り買取</h4>
             <p class="support-contents-text">驚きのこんぴゅう査定で高額買取が可能！</p>
           </div>
 
-          <div class="support-contents">
-            <img src="img/top-support3.png" alt="" class="support-img">
-            <h4 class="support-contents-title brown-white-cv">アフターメンテナンス</h4>
+          <div class="support-contents hover-move-text">
+            <img src="img/top-support3.png" alt="" class="support-img gsap-move">
+            <h4 class="support-contents-title brown-white-cv gsap-move">アフターメンテナンス</h4>
             <p class="support-contents-text">アフタートラブル防止の安心4つのお約束車検プロの整備士が入念にチェック！</p>
           </div>
         </div>
 
-        <p class="viewmore-text sp">VIEW MORE<span class="side_arrow"></span></p>
+        <a href="pages/support.html" class="viewmore-text sp">VIEW MORE<span class="side_arrow"></span></a>
 
       </section>
 
@@ -227,21 +305,21 @@
         <h2 class="section-title orange-text">ROAD MAP</h2>
         
         <div class="roadmap-container">
-          <div class="roadmap-contents beige-black-cv">
+          <a href="#lu-id" class="roadmap-contents beige-black-cv hover-move-line-text">
             <h3 class="roadmap-step orange-white-cv">STEP.1</h3>
             <div class="roadmap-contents-box">
-              <h4 class="roadmap-contents-title">車を選ぶ</h4>
+              <h4 class="roadmap-contents-title gsap-move">車を選ぶ<span class="bd-bottom"></span></h4>
             </div>
-          </div>
+          </a>
 
           <div class="roadmap-contents-arrow"><span class="arrow-value"></span></div>
 
-          <div class="roadmap-contents">
+          <a href="pages/contact.html" class="roadmap-contents hover-move-line-text">
             <h3 class="roadmap-step orange-white-cv">STEP.2</h3>
             <div class="roadmap-contents-box beige-black-cv">
-              <h4 class="roadmap-contents-title">お問い合わせ</h4>
+              <h4 class="roadmap-contents-title gsap-move">お問い合わせ<span class="bd-bottom"></span></h4>
             </div>
-          </div>
+          </a>
 
           <div class="roadmap-contents-arrow"><span class="arrow-value"></span></div>
 
@@ -300,33 +378,33 @@
       <section class="news">
         <div class="news-textarea">
           <h2 class="section-title orange-text">NEWS</h2>
-          <p class="viewmore-text pc">VIEW MORE<span class="side_arrow"></span></p>
+          <a href="pages/news.html" class="viewmore-text pc hover-move-line-right">VIEW MORE<span class="side_arrow"></span><span class="bd-bottom"></span></a>
         </div>
 
         <div class="news-container">
-          <div class="news-contents">
-            <img src="img/top-news1.png" alt="" class="news-img">
+          <a href="pages/newsdetail.html" class="news-contents hover-move-text">
+            <img src="img/top-news1.png" alt="" class="news-img gsap-move">
             <p class="news-date green-text">2022.07.15</p>
             <h3 class="news-title">イベントタイトルイベントタイトルイベントタイトル</h3>
             <p class="news-text">サービス概要はこちらにはいりますサービス概要がこちらにはいりますサービス概要がこちらに入ります</p>
-          </div>
+          </a>
 
-          <div class="news-contents">
-            <img src="img/top-news2.png" alt="" class="news-img">
+          <a href="pages/newsdetail.html" class="news-contents hover-move-text">
+            <img src="img/top-news2.png" alt="" class="news-img gsap-move">
             <p class="news-date green-text">2022.07.15</p>
             <h3 class="news-title">イベントタイトルイベントタイトルイベントタイトル</h3>
             <p class="news-text">サービス概要はこちらにはいりますサービス概要がこちらにはいりますサービス概要がこちらに入ります</p>
-          </div>
+          </a>
 
-          <div class="news-contents">
-            <img src="img/top-news3.png" alt="" class="news-img">
+          <a href="pages/newsdetail.html" class="news-contents hover-move-text">
+            <img src="img/top-news3.png" alt="" class="news-img gsap-move">
             <p class="news-date green-text">2022.07.15</p>
             <h3 class="news-title">イベントタイトルイベントタイトルイベントタイトル</h3>
             <p class="news-text">サービス概要はこちらにはいりますサービス概要がこちらにはいりますサービス概要がこちらに入ります</p>
-          </div>
+          </a>
         </div>
 
-        <p class="viewmore-text sp">VIEW MORE<span class="side_arrow"></span></p>
+        <a href="pages/news.html" class="viewmore-text sp">VIEW MORE<span class="side_arrow"></span></a href="">
       </section>
 
       <!------------START MESSAGE---------->
@@ -337,8 +415,8 @@
             メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。<br><br class="sp">
             メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。メッセージが入ります。
           </p>
-          <img src="img/com-importcar1.png" alt="" class="message-car">
-          <img src="img/top-message.png" alt="" class="message-man">
+          <img src="/img/com-importcar1.png" alt="" class="message-car">
+          <img src="/img/top-message.png" alt="" class="message-man">
         </div>
       </section>
 
@@ -351,34 +429,34 @@
             <p class="contact-title-text">お気軽にご相談ください</p>
           </div>
   
-          <p class="contact-link">お問い合わせはこちらから<span class="side_arrow"></span></p>
+          <a href="pages/contact.html" class="contact-link hover-move-line-right">お問い合わせはこちらから<span class="side_arrow"></span><span class="bd-bottom"></span></a>
         </div>
 
         <div class="contact-subarea brown-white-cv">
-          <div class="contact-subbox">
+          <div class="contact-subbox hover-right">
             <p class="contact-subbox-title">ORANGE ROAD</p>
             <p class="contact-side-arrow"><span class="contact-side-arrow-value"></span></p>
             <div class="contact-icon">
-              <img src="img/com-lineicon.png" alt="" class="contact-line">
+              <a href=""><img src="/img/com-lineicon.png" alt="" class="contact-line hover-move"></a>
             </div>
           </div>
 
-          <div class="contact-subbox orange-white-cv">
+          <div class="contact-subbox orange-white-cv hover-right">
             <p class="contact-subbox-title">IMPORT CAR<br><span class="contact-subbox-title-sm">輸入車</span></p>
             <p class="contact-side-arrow"><span class="contact-side-arrow-value"></span></p>
             <div class="contact-icon">
-              <img src="img/com-youtubeicon2.png" alt="" class="contact-yt">
-              <img src="img/com-instagramicon.png" alt="" class="contact-ig">
+              <a href=""><img src="/img/com-youtubeicon2.png" alt="" class="contact-yt hover-move"></a>
+              <a href=""><img src="/img/com-instagramicon.png" alt="" class="contact-ig hover-move"></a>
             </div>
 
           </div>
 
-          <div class="contact-subbox green-white-cv">
+          <div class="contact-subbox green-white-cv hover-right">
             <p class="contact-subbox-title">PIKE CAR<br><span class="contact-subbox-title-sm">パイクカー</span></p>
             <p class="contact-side-arrow"><span class="contact-side-arrow-value"></span></p>
             <div class="contact-icon">
-              <img src="img/com-youtubeicon2.png" alt="" class="contact-yt">
-              <img src="img/com-instagramicon.png" alt="" class="contact-ig">
+              <a href=""><img src="/img/com-youtubeicon2.png" alt="" class="contact-yt hover-move"></a>
+              <a href=""><img src="/img/com-instagramicon.png" alt="" class="contact-ig hover-move"></a>
             </div>
           </div>
         </div>
@@ -389,7 +467,7 @@
     <footer class="ft orange-white-cv">
       <div class="ft-container">
         <div class="ft-mainblock">
-          <img src="img/footer-mainlogo.png" alt="" class="ft-logo">
+          <img src="/img/footer-mainlogo.png" alt="" class="ft-logo">
           <p class="ft-logotext">オレンジロード</p>
           <div class="ft-info">
             <p class="ft-addres">〒224-0053<br>
@@ -405,21 +483,21 @@
         <div class="sp">
           <div class="ft-nav">
             <ul class="ft-ul">
-              <li class="ft-li">LINE-UP</li>
-              <li class="ft-li-child">- 輸入車</li>
-              <li class="ft-li-child">- パイクカー</li>
-              <li class="ft-li">NEWS</li>
-              <li class="ft-li">COMPANY</li>
-              <li class="ft-li">CONTACT</li>
-              <li class="ft-li">PRIVACY POLICY</li>
+              <li class="ft-li"><a href="#lu-id">LINE-UP</a></li>
+              <li class="ft-li-child"><a href="pages/importcar.html">- 輸入車</a></li>
+              <li class="ft-li-child"><a href="pages/pikecar.html">- パイクカー</a></li>
+              <li class="ft-li"><a href="pages/news.html">NEWS</a></li>
+              <li class="ft-li"><a href="pages/company.html">COMPANY</p></li>
+              <li class="ft-li"><a href="pages/contact.html">CONTACT</a></li>
+              <li class="ft-li"><a href="">PRIVACY POLICY</a></li>
             </ul>
     
             <ul class="ft-ul">
-              <li class="ft-li">SUPPORT</li>
-              <li class="ft-li-child">- 納車までの流れ</li>
-              <li class="ft-li-child">- 整備・修理</li>
-              <li class="ft-li-child">- アフターメンテナンス</li>
-              <li class="ft-li-child">- 下取り買取</li>
+              <li class="ft-li"><a href="pages/support.html">SUPPORT</a></li>
+              <li class="ft-li-child"><a href="pages/support.html">- 納車までの流れ</a></li>
+              <li class="ft-li-child"><a href="pages/support.html">- 整備・修理</a></li>
+              <li class="ft-li-child"><a href="pages/support.html">- アフターメンテナンス</a></li>
+              <li class="ft-li-child"><a href="pages/support.html">- 下取り買取</a></li>
             </ul>
           </div>
         </div>
@@ -427,24 +505,24 @@
         <div class="pc">
           <div class="ft-nav">
             <ul class="ft-ul">
-              <li class="ft-li">LINE-UP</li>
-              <li class="ft-li-child">- 輸入車</li>
-              <li class="ft-li-child">- パイクカー</li>
+              <li class="ft-li hover-move"><a href="#lu-id">LINE-UP</a></li>
+              <li class="ft-li-child hover-move"><a href="pages/importcar.html">- 輸入車</a></li>
+              <li class="ft-li-child hover-move"><a href="pages/pikecar.html">- パイクカー</a></li>
             </ul>
     
             <ul class="ft-ul">
-              <li class="ft-li">SUPPORT</li>
-              <li class="ft-li-child">- 納車までの流れ</li>
-              <li class="ft-li-child">- 整備・修理</li>
-              <li class="ft-li-child">- アフターメンテナンス</li>
-              <li class="ft-li-child">- 下取り買取</li>
+              <li class="ft-li hover-move"><a href="pages/support.html">SUPPORT</a></li>
+              <li class="ft-li-child hover-move"><a href="pages/support.html">- 納車までの流れ</a></li>
+              <li class="ft-li-child hover-move"><a href="pages/support.html">- 整備・修理</a></li>
+              <li class="ft-li-child hover-move"><a href="pages/support.html">- アフターメンテナンス</a></li>
+              <li class="ft-li-child hover-move"><a href="pages/support.html">- 下取り買取</a></li>
             </ul>
   
               <ul class="ft-ul">
-                <li class="ft-li">NEWS</li>
-                <li class="ft-li">COMPANY</li>
-                <li class="ft-li">CONTACT</li>
-                <li class="ft-li">PRIVACY POLICY</li>
+                <li class="ft-li hover-move"><a href="pages/news.html">NEWS</a></li>
+                <li class="ft-li hover-move"><a href="pages/company.html">COMPANY</a></li>
+                <li class="ft-li hover-move"><a href="pages/contact.html">CONTACT</a></li>
+                <li class="ft-li hover-move"><a href="">PRIVACY POLICY</a></li>
               </ul>
           </div>
         </div>
@@ -452,17 +530,19 @@
       </div>
 
       <div class="ft-under">
-        <p class="ft-backtotop">BACK TO TOP<span class="up_arrow"></span></p>
+        <a href="#fv-id" class="ft-backtotop hover-move-line-up">BACK TO TOP<span class="up_arrow"></span><span class="bd-bottom"></span></a>
         <p class="ft-copyright">Copyright &copy; ORANGE ROAD All Rights Reserved.</p>
       </div>
     </footer>
 
-
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <!-- ScrollRevealView CDN -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-
     <!-- JavaScript load -->
-    <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
