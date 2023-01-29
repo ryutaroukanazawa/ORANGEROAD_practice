@@ -36,7 +36,7 @@ window.addEventListener('scroll', function () {
     }
 
     } else {
-        if (activePath === "/top.html") {
+        if (activePath === "/index.html") {
             fixed.style.position = "absolute";
         } else {
             fixed.style.position = "initial";
@@ -69,7 +69,7 @@ const jsDot = ".js-loader-dot-wrap > span";
 const jsText = ".js-mv_title-item span";
 const jsHeader = ".js-header";
 
-if (activePath === "/top.html") {
+if (activePath === "/index.html") {
 
     /* 文字列を分割しspanで囲む */
     (function () {
