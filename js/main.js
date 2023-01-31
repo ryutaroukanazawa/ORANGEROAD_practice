@@ -36,7 +36,7 @@ window.addEventListener('scroll', function () {
     }
 
     } else {
-        if (activePath === "/vercel.app") {
+        if (activePath === "/index.html" || activePath === "/vercel.app") {
         // if(document.URL.match("/vercel.app")){
             fixed.style.position = "absolute";
         } else {
@@ -70,7 +70,7 @@ const jsDot = ".js-loader-dot-wrap > span";
 const jsText = ".js-mv_title-item span";
 const jsHeader = ".js-header";
 
-if (activePath == "/vercel.app") {
+if (activePath === "/index.html" || activePath === "/vercel.app") {
 // if(document.URL.match(/vercel/)){
 
     /* 文字列を分割しspanで囲む */
@@ -118,7 +118,7 @@ if (activePath == "/vercel.app") {
         from: "start", // 左から
         ease: "power4.inOut",
         },
-        repeat: 2,
+        repeat: 0,
     })
 
     /* opening titleの文字を消す */
