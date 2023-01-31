@@ -36,7 +36,7 @@ window.addEventListener('scroll', function () {
     }
 
     } else {
-        if (activePath === "/index.html" || activePath === "/vercel.app") {
+        if (activePath === "/vercel.app") {
         // if(document.URL.match("/vercel.app")){
             fixed.style.position = "absolute";
         } else {
@@ -70,7 +70,7 @@ const jsDot = ".js-loader-dot-wrap > span";
 const jsText = ".js-mv_title-item span";
 const jsHeader = ".js-header";
 
-if (activePath === "/index.html" || activePath === "/vercel.app") {
+if (activePath === "/vercel.app") {
 // if(document.URL.match(/vercel/)){
 
     /* 文字列を分割しspanで囲む */
