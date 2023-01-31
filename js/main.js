@@ -37,7 +37,7 @@ window.addEventListener('scroll', function () {
 
     } else {
         // if (activePath === "/index.html") {
-        if(document.URL.match(/index/)){
+        if(document.URL.match(/vercel/)){
             fixed.style.position = "absolute";
         } else {
             fixed.style.position = "initial";
@@ -71,7 +71,7 @@ const jsText = ".js-mv_title-item span";
 const jsHeader = ".js-header";
 
 // if (activePath == "index.html") {
-if(document.URL.match(/index/)){
+if(document.URL.match(/vercel/)){
 
     /* 文字列を分割しspanで囲む */
     (function () {
