@@ -36,8 +36,8 @@ window.addEventListener('scroll', function () {
     }
 
     } else {
-        // if (activePath === "/index.html") {
-        if(document.URL.match("/vercel.app")){
+        if (activePath === "/vercel.app") {
+        // if(document.URL.match("/vercel.app")){
             fixed.style.position = "absolute";
         } else {
             fixed.style.position = "initial";
