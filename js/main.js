@@ -10,7 +10,7 @@ const fixedFontColor = document.getElementsByClassName("fixed-font-color");
 let fixedFontColor_len = fixedFontColor.length;
 const fixedArrowColor = document.getElementsByClassName("fixed-arrow-color");
 let fixedArrowColor_len = fixedArrowColor.length;
-let activePath = location.pathname
+let activePath = location.pathname;
 
 window.addEventListener('scroll', function () {
   
@@ -36,7 +36,8 @@ window.addEventListener('scroll', function () {
     }
 
     } else {
-        if (activePath === "/index.html") {
+        // if (activePath === "/index.html") {
+        if(document.URL.match(/index/)){
             fixed.style.position = "absolute";
         } else {
             fixed.style.position = "initial";
@@ -69,7 +70,8 @@ const jsDot = ".js-loader-dot-wrap > span";
 const jsText = ".js-mv_title-item span";
 const jsHeader = ".js-header";
 
-if (activePath === "/index.html") {
+// if (activePath == "index.html") {
+if(document.URL.match(/index/)){
 
     /* 文字列を分割しspanで囲む */
     (function () {
@@ -183,7 +185,6 @@ hamburgerTl.to(".hamburger-line1", {
         duration: 0.2,
         ease: "sine.out",
         onComplete: () => {
-            console.log("Complete!")
           },
     }, "-=0.2")
     .to(".fv", {
