@@ -76,9 +76,19 @@
                 justify-content: center;
                 align-items: center;
 
+                .contact-line {
+                    width: md.vw-sp(40);
+                    height: md.vw-sp(40);
+                }
+
                 .contact-yt {
                     width: md.vw-sp(40);
                     height: md.vw-sp(28);
+                }
+
+                .contact-ig {
+                    width: md.vw-sp(40);
+                    height: md.vw-sp(40);
                 }
             }
         }
@@ -155,9 +165,19 @@
                     width: md.vw-pc(100);
                     gap: md.vw-pc(23);
     
+                    .contact-line {
+                        width: md.vw-pc(40);
+                        height: md.vw-pc(40);
+                    }
+
                     .contact-yt {
                         width: md.vw-pc(40);
                         height: md.vw-pc(28);
+                    }
+
+                    .contact-ig {
+                        width: md.vw-pc(40);
+                        height: md.vw-pc(40);
                     }
                 }
             }

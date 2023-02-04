@@ -1,0 +1,41 @@
+// ===============
+// px → vh change
+// ===============
+
+@function vh-sp($pxvh-sp, $basevh-sp: 714) {
+  @return calc($pxvh-sp / $basevh-sp) * 100vh;
+}
+
+@function vh-pc($pxvh-pc, $basevh-pc: 780) {
+  @return calc($pxvh-pc / $basevh-pc) * 100vh;
+}
+
+// ===============
+// scss example
+// ===============
+// .foo {
+//   width: vh(40px);
+// }
+
+// .bar {
+//   width: vh(40px, 768px);
+// }
+
+// .baz {
+//   width: vh(50%);
+// }
+
+// ===============
+// compile example
+// ===============
+// .foo {
+//   width: 10.66667vh;
+// }
+
+// .bar {
+//   width: 5.20833vh;
+// }
+
+// .baz {
+//   width: 50%;
+// }

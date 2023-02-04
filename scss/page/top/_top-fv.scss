@@ -2,7 +2,7 @@
 @use '../../modules/index' as md;
 
 .fv {
-    @include md.bg-img('/img/top-fv1-sp.png');
+    // @include md.bg-img('/img/top-fv1-sp.png');
     position: absolute;
     top: 0;
     left: 0;
@@ -14,6 +14,8 @@
         width: 100%;
         height: 100vh;
         position: relative;
+        background-position: center center;
+	    background-size: cover;
 
         .fv-scroll {
             width: md.vw-sp(52+10+76);
@@ -46,7 +48,7 @@
 
 @include md.rps-sw(pc) {
     .fv {
-        @include md.bg-img('/img/top-fv1-pc.png');
+        // @include md.bg-img('/img/top-fv1-pc.png');
     
         .fv-position {
     

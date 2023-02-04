@@ -1,186 +1,307 @@
-@use '../bases/variables' as vb;
-@use '../modules/index' as md;
+@use "../bases/variables" as vb;
+@use "../modules/index" as md;
 
 .hd {
-    position: absolute;
-    top: 0;
-    z-index: 10;
-    width: 100%;
-    padding: md.vw-sp(23) md.vw-sp(28);
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: md.vw-sp(23) md.vw-sp(28);
+  display: flex;
+  align-items: center;
+  gap: md.vw-sp(25);
+  position: fixed;
+
+  .hd-logo {
+    width: md.vw-sp(200);
+  }
+
+  .hd-ul {
     display: flex;
     align-items: center;
-    gap: md.vw-sp(25);
-    position: fixed;
+    gap: md.vw-sp(24);
 
-    .hd-logo {
-        width: md.vw-sp(200);
+    .hd-li-backcolor {
+      width: md.vw-sp(40);
+      height: md.vw-sp(40);
+      display: flex;
+      @include md.fl-center(xy);
+
+      .hd-mail {
+        width: md.vw-sp(18);
+      }
     }
 
-    .hd-ul {
-        display: flex;
-        align-items: center;
-        gap: md.vw-sp(24);
+    .mobile-menu-icon {
+      background-color: unset;
+      border: none;
+      outline: none !important;
+      cursor: pointer;
+      width: md.vw-sp(36);
+      height: 100%;
 
-        .hd-li-backcolor {
+      span {
+        width: 100%;
+        height: 2px;
+        background-color: vb.$white-color;
+        position: relative;
+        // transition: ease .4s; /*ハンバーガーメニュークリック時の三本線の動きを遅延*/
+        display: block;
+      }
+
+      span:nth-child(1) {
+        top: 0;
+      }
+
+      span:nth-child(2) {
+        margin: md.vw-sp(10) 0;
+      }
+
+      span:nth-child(3) {
+        top: 0;
+      }
+    }
+  }
+}
+
+.humburger-display {
+  display: none;
+  position: fixed;
+  top: 0;
+  padding-top: md.vw-sp(86);
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: vb.$beige-color;
+
+  .hamburger-nav {
+    width: 100%;
+    padding: 5vh md.vw-sp(36) 5vh;
+    display: flex;
+    justify-content: space-between;
+
+    .hamburger-ul {
+      display: flex;
+      flex-direction: column;
+      gap: 3vh;
+    }
+  }
+
+  .hamburger-contact{
+    position: absolute;
+    bottom: 0;
+
+    .contact-mainarea {
+      @include md.bg-img("/img/com-contact-bgi-sp.png");
+      width: 100%;
+      text-align: center;
+      padding: md.vw-sp(30) md.vw-sp(60) md.vw-sp(40);
+
+      .contact-link {
+      //   padding-top: md.vw-sp(31);
+        width: md.vw-sp(230);
+        margin: 0 auto;
+        padding-bottom: md.vw-sp(5);
+        border-bottom: 6px solid vb.$white-color;
+        text-align: left;
+
+        .side_arrow {
+          display: block;
+          border-top: 2px solid vb.$white-color;
+          border-right: 2px solid vb.$white-color;
+          transform: rotate(45deg);
+          width: md.vw-sp(10);
+          height: md.vw-sp(10);
+          float: right;
+          margin-top: md.vw-sp(10);
+          margin-right: md.vw-sp(5);
+        }
+      }
+    }
+
+    .contact-subarea {
+      display: flex;
+      flex-direction: column;
+      // margin-top: md.vw-sp(3);
+
+      .contact-subbox {
+        padding: md.vw-sp(11) md.vw-sp(40);
+        display: flex;
+        @include md.fl-center(y);
+
+        .contact-subbox-title {
+          width: md.vw-sp(136);
+        }
+
+        .contact-side-arrow {
+          width: md.vw-sp(10);
+          margin: 0 md.vw-sp(28) 0 md.vw-sp(21);
+
+          .contact-side-arrow-value {
+            display: block;
+            border-top: 2px solid vb.$white-color;
+            border-right: 2px solid vb.$white-color;
+            transform: rotate(45deg);
+            width: md.vw-sp(10);
+            height: md.vw-sp(10);
+          }
+        }
+
+        .contact-icon {
+          width: md.vw-sp(100);
+          display: flex;
+          gap: md.vw-sp(18);
+          justify-content: center;
+          align-items: center;
+
+          .contact-line {
             width: md.vw-sp(40);
             height: md.vw-sp(40);
-            display: flex;
-            @include md.fl-center(xy);
+          }
 
-            .hd-mail {
-                width: md.vw-sp(18);
-            }
+          .contact-yt {
+            width: md.vw-sp(40);
+            height: md.vw-sp(28);
+          }
+
+          .contact-ig {
+            width: md.vw-sp(40);
+            height: md.vw-sp(40);
+          }
         }
-
-        .mobile-menu-icon {
-            background-color: unset;
-            border: none;
-            outline: none !important;
-            cursor: pointer;
-
-            .line-color {
-                background-color: vb.$white-color;
-            }
-        
-            & > span {
-                // background-color: vb.$white-color;
-                width: md.vw-sp(35);
-                height: md.vw-sp(2);
-                display: block;
-                margin-bottom: md.vw-sp(9);
-                transition: transform 0.7s;
-        
-                &:last-child {
-                    margin-bottom: 0;
-                }
-            }
-        }
-
-        .hamburger-menu {
-            & > span {
-                background-color: vb.$black-color;
-            }
-        }
+      }
     }
+  }
 }
 
-.hamburger-fixed-fv {
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    background-color: vb.$beige-color;
-    text-align: center;
-    padding-top: md.vw-sp(100);
-
-    .hamburger-nav {
-        display: flex;
-        text-align: left;
-    }
+.active {
+  display: block;
 }
 
-.hamburger-fixed-hd {
-    position: fixed;
-    z-index: 100;
+.no_scroll {
+  overflow: hidden;
 }
 
 @include md.rps-sw(pc) {
-    .hd {
-        padding: md.vw-pc(36) md.vw-pc(38);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    
-        .hd-logo {
-            width: md.vw-pc(250);
-        }
-    
-        .hd-ul {
-            display: flex;
-            align-items: center;
-            gap: md.vw-pc(39);
+  .hd {
+    padding: md.vw-pc(36) md.vw-pc(38);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-            .hd-li-normal {
-                width: auto;
-                margin: 0;
-                padding-bottom: md.vw-pc(0);
-                // border-bottom: 5px solid vb.$orange-color;
-                text-align: left;
-                position: relative;
-    
-                .up_arrow {
-                    display: block;
-                    border-top: 2px solid vb.$white-color;
-                    border-right: 2px solid vb.$white-color;
-                    transform: rotate(-45deg);
-                    width: md.vw-pc(10);
-                    height: md.vw-pc(10);
-                    float: right;
-                    margin-top: md.vw-pc(5);
-                    margin-left: md.vw-pc(10);
-                    margin-right: md.vw-pc(3);
-                }
-
-                .lineup-hoverlist {
-                    width: md.vw-pc(100);
-                    height: md.vw-pc(80);
-                    padding: md.vw-pc(10) md.vw-pc(10);
-                    background-color: vb.$white-color;
-                    opacity: 0;
-                    scale: 0.001;
-                    position: absolute;
-                    top: 150%;
-                    display: flex;
-                    flex-direction: column;
-                    @include md.fl-center(xy);
-                }
-
-                .support-hoverlist {
-                    width: md.vw-pc(170);
-                    height: md.vw-pc(150);
-                    padding: md.vw-pc(10) md.vw-pc(10);
-                    background-color: vb.$white-color;
-                    opacity: 0;
-                    scale: 0.001;
-                    position: absolute;
-                    top: 150%;
-                    display: flex;
-                    flex-direction: column;
-                    @include md.fl-center(xy);
-                }
-
-                .hoverlist-contents {
-                    width: 100%;
-                    padding: md.vw-pc(8) 0;
-                    border-bottom: 1px solid vb.$black-color;
-                }
-
-                .hoverlist-contents:last-child {
-                    border-bottom: initial;
-                }
-            }
-    
-            .hd-li-backcolor {
-                width: md.vw-pc(140);
-                height: md.vw-pc(30);
-                display: flex;
-                @include md.fl-center(xy);
-                gap: md.vw-pc(10);
-
-                .hd-mail {
-                    width: md.vw-pc(18);
-                }
-            }
-        }
+    .hd-logo {
+      width: md.vw-pc(250);
     }
+
+    .hd-ul {
+      display: flex;
+      align-items: center;
+      gap: md.vw-pc(39);
+
+      .hd-li-normal {
+        width: auto;
+        margin: 0;
+        padding-bottom: md.vw-pc(0);
+        // border-bottom: 5px solid vb.$orange-color;
+        text-align: left;
+        position: relative;
+
+        .up_arrow {
+          display: block;
+          border-top: 2px solid vb.$white-color;
+          border-right: 2px solid vb.$white-color;
+          transform: rotate(-45deg);
+          width: md.vw-pc(10);
+          height: md.vw-pc(10);
+          float: right;
+          margin-top: md.vw-pc(5);
+          margin-left: md.vw-pc(10);
+          margin-right: md.vw-pc(3);
+        }
+
+        .lineup-hoverlist {
+          width: md.vw-pc(100);
+          height: md.vw-pc(80);
+          padding: md.vw-pc(10) md.vw-pc(10);
+          background-color: vb.$white-color;
+          opacity: 0;
+          scale: 0.001;
+          position: absolute;
+          top: 150%;
+          display: flex;
+          flex-direction: column;
+          @include md.fl-center(xy);
+        }
+
+        .support-hoverlist {
+          width: md.vw-pc(170);
+          height: md.vw-pc(150);
+          padding: md.vw-pc(10) md.vw-pc(10);
+          background-color: vb.$white-color;
+          opacity: 0;
+          scale: 0.001;
+          position: absolute;
+          top: 150%;
+          display: flex;
+          flex-direction: column;
+          @include md.fl-center(xy);
+        }
+
+        .hoverlist-contents {
+          width: 100%;
+          padding: md.vw-pc(8) 0;
+          border-bottom: 1px solid vb.$black-color;
+        }
+
+        .hoverlist-contents:last-child {
+          border-bottom: initial;
+        }
+      }
+
+      .hd-li-backcolor {
+        width: md.vw-pc(140);
+        height: md.vw-pc(30);
+        display: flex;
+        @include md.fl-center(xy);
+        gap: md.vw-pc(10);
+
+        .hd-mail {
+          width: md.vw-pc(18);
+        }
+      }
+    }
+  }
 }
 
 /*---font---*/
-.hd-li-normal {
+.hamburger-li {
+  @include md.fontset(md.vw-sp(14), 600, md.vw-sp(17), 0.04em);
+}
+
+.hamburger-li-child {
+  font-family: vb.$sub-font1;
+  @include md.fontset(md.vw-sp(12), 600, md.vw-sp(16), 0.06em);
+}
+
+.contact-link {
+  font-family: vb.$sub-font1;
+  @include md.fontset(md.vw-sp(16), 700, md.vw-sp(22), 0.04em);
+}
+
+.contact-subbox-title {
+  @include md.fontset(md.vw-sp(16), 700, md.vw-sp(20), 0.04em);
+}
+
+.contact-subbox-title-sm {
+  font-family: vb.$sub-font1;
+  @include md.fontset(md.vw-sp(12), 600, md.vw-sp(16), 0.06em);
+}
+
+@include md.rps-sw(pc) {
+  .hd-li-normal {
     @include md.fontset(md.vw-pc(14), 600, md.vw-pc(17), 0.04em);
   }
-  
+
   .hd-li-backcolor {
     @include md.fontset(md.vw-pc(14), 600, md.vw-pc(17), 0.04em);
   }
@@ -189,3 +310,4 @@
     font-family: vb.$sub-font1;
     @include md.fontset(md.vw-pc(14), 500, md.vw-pc(19), 0.06em);
   }
+}

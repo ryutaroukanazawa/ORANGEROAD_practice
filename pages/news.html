@@ -15,84 +15,176 @@
   </head>
 
   <body>
-    <!------------START HanburgerMenu-Open---------->
-    <div id="hambuerger-menu-open">
-      <!-- <p>ここにハンバーガーメニューを開いた時のデザイン！</p>
-        <div class="hamburger-nav">
-          <ul class="hamburger-ul">
-            <li class="hamburger-li">LINE-UP</li>
-            <li class="hamburger-li-child">- 輸入車</li>
-            <li class="hamburger-li-child">- パイクカー</li>
-            <li class="hamburger-li">NEWS</li>
-            <li class="hamburger-li">COMPANY</li>
-            <li class="hamburger-li">CONTACT</li>
-            <li class="hamburger-li">PRIVACY POLICY</li>
-          </ul>
-  
-          <ul class="hamburger-ul">
-            <li class="hamburger-li">SUPPORT</li>
-            <li class="hamburger-li-child">- 納車までの流れ</li>
-            <li class="hamburger-li-child">- 整備・修理</li>
-            <li class="hamburger-li-child">- アフターメンテナンス</li>
-            <li class="hamburger-li-child">- 下取り買取</li>
-          </ul>
-        </div> -->
-    </div>
-    
     <!------------START HEADER---------->
     <header id="hd-id" class="hd white-text js-header">
-      <a href="../index.html" class="hover-move">
+      <a href="/index.html" class="hover-move">
         <h1 class="hd-title">
           <img src="/img/header-mainlogo.png" alt="ORANGE ROADのメインロゴ画像" class="hd-logo">
         </h1>
       </a>
 
-      <nav class="hd-nav black-text">
+      <nav class="hd-nav white-text">
         <div class="sp">
           <ul class="hd-ul">
-            <li class="hd-li-backcolor orange-white-cv"><img src="/img/header-mailicon.png" alt="メールのアイコン画像" class="hd-mail"></li>
-            <li class="hamburger-menu">
+            <a href="/pages/contact.html"><li class="hd-li-backcolor orange-white-cv"><img src="/img/header-mailicon.png" alt="メールのアイコン画像" class="hd-mail"></li></a>
+            <li id="js-hamburger" class="hamburger-menu active">
               <button id="hamburger-button" class="mobile-menu-icon">
-                <span class="hamburger-line1"></span>
-                <span class="hamburger-line2"></span>
-                <span class="hamburger-line3"></span>
+                <span class="hamburger-line1 fixed-line-color"></span>
+                <span class="hamburger-line2 fixed-line-color"></span>
+                <span class="hamburger-line3 fixed-line-color"></span>
               </button>
             </li>
           </ul>
         </div>
 
         <div class="pc">
-          <ul class="hd-ul">
-            <li class="hd-li-normal hover-move-line-down">LINE-UP<span class="up_arrow"></span><span class="bd-bottom"></span>
+          <ul class="hd-ul black-text">
+            <li class="hd-li-normal hover-move-line-down fixed-font-color">LINE-UP<span class="up_arrow fixed-arrow-color"></span><span class="bd-bottom"></span>
               <div class="lineup-hoverlist">
-                <p class="hoverlist-contents black-text hover-transparent"><a href="./importcar.html">輸入車</a></p>
-                <p class="hoverlist-contents black-text hover-transparent"><a href="./pikecar.html">パイクカー</a></p>
+                <p class="hoverlist-contents black-text hover-transparent"><a href="/pages/importcar.html">輸入車</a></p>
+                <p class="hoverlist-contents black-text hover-transparent"><a href="/pages/pikecar.html">パイクカー</a></p>
               </div>
             </li>
-            <li class="hd-li-normal hover-move-line-down">SUPPORT<span class="up_arrow"></span><span class="bd-bottom"></span>
+            <li class="hd-li-normal hover-move-line-down fixed-font-color"><a href="/pages/support.html">SUPPORT<span class="up_arrow fixed-arrow-color"></span><span class="bd-bottom"></span></a>
               <div class="support-hoverlist">
-                <p class="hoverlist-contents black-text hover-transparent"><a href="./support.html">納車までの流れ</a></p>
-                <p class="hoverlist-contents black-text hover-transparent"><a href="./support.html">整備・修理</a></p>
-                <p class="hoverlist-contents black-text hover-transparent"><a href="./support.html">アフターメンテナンス</a></p>
-                <p class="hoverlist-contents black-text hover-transparent"><a href="./support.html">下取り買取</a></p>
+                <p class="hoverlist-contents black-text hover-transparent"><a href="/pages/support.html#roadmap-id">納車までの流れ</a></p>
+                <p class="hoverlist-contents black-text hover-transparent"><a href="/pages/support.html#support1-id">整備・修理</a></p>
+                <p class="hoverlist-contents black-text hover-transparent"><a href="/pages/support.html#support2-id">下取り買取</a></p>
+                <p class="hoverlist-contents black-text hover-transparent"><a href="/pages/support.html#support3-id">アフターメンテナンス</a></p>
               </div>
             </li>
-            <li class="hd-li-normal hover-move-line">
-              <a href="./news.html">NEWS<span class="bd-bottom"></span></a>
+            <li class="hd-li-normal hover-move-line fixed-font-color">
+              <a href="/pages/news.html">NEWS<span class="bd-bottom"></span></a>
             </li>
-            <li class="hd-li-normal hover-move-line">
-              <a href="./company.html">COMPANY<span class="bd-bottom"></span></a>
+            <li class="hd-li-normal hover-move-line fixed-font-color">
+              <a href="/pages/company.html">COMPANY<span class="bd-bottom"></span></a>
             </li>
-            <li class="hd-li-backcolor hover-move orange-white-cv">
-              <a href="./contact.html">
+            <a href="/pages/contact.html">
+              <li class="hd-li-backcolor hover-move orange-white-cv">
                 <img src="/img/header-mailicon.png" alt="メールのアイコン画像" class="hd-mail">
                 CONTACT
-              </a>
-            </li>
+              </li>
+            </a>
           </ul>
         </div>
       </nav>
     </header>
+
+    <!------------START HanburgerMenu-Open---------->
+    <div id="js-nav" class="humburger-display">
+      <div class="hamburger-nav orange-text">
+        <ul class="hamburger-ul">
+          <li class="hamburger-li">LINE-UP</li>
+          <li class="hamburger-li-child"><a href="/pages/importcar.html">- 輸入車</a></li>
+          <li class="hamburger-li-child"><a href="/pages/pikecar.html">- パイクカー</a></li>
+          <li class="hamburger-li"><a href="/pages/news.html">NEWS</a></li>
+          <li class="hamburger-li"><a href="/pages/company.html">COMPANY</a></li>
+          <li class="hamburger-li"><a href="/pages/contact.html">CONTACT</a></li>
+          <li class="hamburger-li"><a href="">PRIVACY POLICY</a></li>
+        </ul>
+
+        <ul class="hamburger-ul">
+          <li class="hamburger-li"><a href="/pages/">SUPPORT</a></li>
+          <li class="hamburger-li-child"><a href="/pages/support.html">- 納車までの流れ</a></li>
+          <li class="hamburger-li-child"><a href="/pages/support.html">- 整備・修理</a></li>
+          <li class="hamburger-li-child"><a href="/pages/support.html">- アフターメンテナンス</a></li>
+          <li class="hamburger-li-child"><a href="/pages/support.html">- 下取り買取</a></li>
+        </ul>
+      </div>
+
+      <div class="hamburger-contact">
+        <div class="contact-mainarea white-text">
+          <a href="/pages/contact.html" class="contact-link hover-move-line-right">お問い合わせはこちらから<span class="side_arrow"></span><span class="bd-bottom"></span></a>
+        </div>
+        
+        <div class="contact-subarea brown-white-cv">
+          <div class="contact-subbox hover-right">
+            <p class="contact-subbox-title">ORANGE ROAD</p>
+            <p class="contact-side-arrow"><span class="contact-side-arrow-value"></span></p>
+            <div class="contact-icon">
+              <a href=""><img src="/img/com-lineicon.png" alt="" class="contact-line hover-move"></a>
+            </div>
+          </div>
+  
+          <div class="contact-subbox orange-white-cv hover-right">
+            <p class="contact-subbox-title">IMPORT CAR<br><span class="contact-subbox-title-sm">輸入車</span></p>
+            <p class="contact-side-arrow"><span class="contact-side-arrow-value"></span></p>
+            <div class="contact-icon">
+              <a href=""><img src="/img/com-youtubeicon2.png" alt="" class="contact-yt hover-move"></a>
+              <a href=""><img src="/img/com-instagramicon.png" alt="" class="contact-ig hover-move"></a>
+            </div>
+  
+          </div>
+  
+          <div class="contact-subbox green-white-cv hover-right">
+            <p class="contact-subbox-title">PIKE CAR<br><span class="contact-subbox-title-sm">パイクカー</span></p>
+            <p class="contact-side-arrow"><span class="contact-side-arrow-value"></span></p>
+            <div class="contact-icon">
+              <a href=""><img src="/img/com-youtubeicon2.png" alt="" class="contact-yt hover-move"></a>
+              <a href=""><img src="/img/com-instagramicon.png" alt="" class="contact-ig hover-move"></a>
+            </div>
+          </div>
+        </div>
+     </div>
+    </div>
+
+    <!------------START HanburgerMenu-Open---------->
+    <div id="js-nav" class="humburger-display">
+      <div class="hamburger-nav orange-text">
+        <ul class="hamburger-ul">
+          <li class="hamburger-li">LINE-UP</li>
+          <li class="hamburger-li-child"><a href="/pages/importcar.html">- 輸入車</a></li>
+          <li class="hamburger-li-child"><a href="/pages/pikecar.html">- パイクカー</a></li>
+          <li class="hamburger-li"><a href="/pages/news.html">NEWS</a></li>
+          <li class="hamburger-li"><a href="/pages/company.html">COMPANY</a></li>
+          <li class="hamburger-li"><a href="/pages/contact.html">CONTACT</a></li>
+          <li class="hamburger-li"><a href="">PRIVACY POLICY</a></li>
+        </ul>
+
+        <ul class="hamburger-ul">
+          <li class="hamburger-li"><a href="/pages/">SUPPORT</a></li>
+          <li class="hamburger-li-child"><a href="/pages/support.html">- 納車までの流れ</a></li>
+          <li class="hamburger-li-child"><a href="/pages/support.html">- 整備・修理</a></li>
+          <li class="hamburger-li-child"><a href="/pages/support.html">- アフターメンテナンス</a></li>
+          <li class="hamburger-li-child"><a href="/pages/support.html">- 下取り買取</a></li>
+        </ul>
+      </div>
+
+      <div class="hamburger-contact">
+        <div class="contact-mainarea white-text">
+          <a href="/pages/contact.html" class="contact-link hover-move-line-right">お問い合わせはこちらから<span class="side_arrow"></span><span class="bd-bottom"></span></a>
+        </div>
+        
+        <div class="contact-subarea brown-white-cv">
+          <div class="contact-subbox hover-right">
+            <p class="contact-subbox-title">ORANGE ROAD</p>
+            <p class="contact-side-arrow"><span class="contact-side-arrow-value"></span></p>
+            <div class="contact-icon">
+              <a href=""><img src="/img/com-lineicon.png" alt="" class="contact-line hover-move"></a>
+            </div>
+          </div>
+  
+          <div class="contact-subbox orange-white-cv hover-right">
+            <p class="contact-subbox-title">IMPORT CAR<br><span class="contact-subbox-title-sm">輸入車</span></p>
+            <p class="contact-side-arrow"><span class="contact-side-arrow-value"></span></p>
+            <div class="contact-icon">
+              <a href=""><img src="/img/com-youtubeicon2.png" alt="" class="contact-yt hover-move"></a>
+              <a href=""><img src="/img/com-instagramicon.png" alt="" class="contact-ig hover-move"></a>
+            </div>
+  
+          </div>
+  
+          <div class="contact-subbox green-white-cv hover-right">
+            <p class="contact-subbox-title">PIKE CAR<br><span class="contact-subbox-title-sm">パイクカー</span></p>
+            <p class="contact-side-arrow"><span class="contact-side-arrow-value"></span></p>
+            <div class="contact-icon">
+              <a href=""><img src="/img/com-youtubeicon2.png" alt="" class="contact-yt hover-move"></a>
+              <a href=""><img src="/img/com-instagramicon.png" alt="" class="contact-ig hover-move"></a>
+            </div>
+          </div>
+        </div>
+     </div>
+    </div>
 
     <!------------START main---------->
     <main>
@@ -213,7 +305,7 @@
             <p class="contact-title-text">お気軽にご相談ください</p>
           </div>
   
-          <a href="pages/contact.html" class="contact-link hover-move-line-right">お問い合わせはこちらから<span class="side_arrow"></span><span class="bd-bottom"></span></a>
+          <a href="/pages/contact.html" class="contact-link hover-move-line-right">お問い合わせはこちらから<span class="side_arrow"></span><span class="bd-bottom"></span></a>
         </div>
 
         <div class="contact-subarea brown-white-cv">
@@ -268,20 +360,20 @@
           <div class="ft-nav">
             <ul class="ft-ul">
               <li class="ft-li"><a href="#lu-id">LINE-UP</a></li>
-              <li class="ft-li-child"><a href="pages/importcar.html">- 輸入車</a></li>
-              <li class="ft-li-child"><a href="pages/pikecar.html">- パイクカー</a></li>
-              <li class="ft-li"><a href="pages/news.html">NEWS</a></li>
-              <li class="ft-li"><a href="pages/company.html">COMPANY</p></li>
-              <li class="ft-li"><a href="pages/contact.html">CONTACT</a></li>
+              <li class="ft-li-child"><a href="/pages/importcar.html">- 輸入車</a></li>
+              <li class="ft-li-child"><a href="/pages/pikecar.html">- パイクカー</a></li>
+              <li class="ft-li"><a href="/pages/news.html">NEWS</a></li>
+              <li class="ft-li"><a href="/pages/company.html">COMPANY</p></li>
+              <li class="ft-li"><a href="/pages/contact.html">CONTACT</a></li>
               <li class="ft-li"><a href="">PRIVACY POLICY</a></li>
             </ul>
     
             <ul class="ft-ul">
-              <li class="ft-li"><a href="pages/support.html">SUPPORT</a></li>
-              <li class="ft-li-child"><a href="pages/support.html">- 納車までの流れ</a></li>
-              <li class="ft-li-child"><a href="pages/support.html">- 整備・修理</a></li>
-              <li class="ft-li-child"><a href="pages/support.html">- アフターメンテナンス</a></li>
-              <li class="ft-li-child"><a href="pages/support.html">- 下取り買取</a></li>
+              <li class="ft-li"><a href="/pages/support.html">SUPPORT</a></li>
+              <li class="ft-li-child"><a href="/pages/support.html">- 納車までの流れ</a></li>
+              <li class="ft-li-child"><a href="/pages/support.html">- 整備・修理</a></li>
+              <li class="ft-li-child"><a href="/pages/support.html">- アフターメンテナンス</a></li>
+              <li class="ft-li-child"><a href="/pages/support.html">- 下取り買取</a></li>
             </ul>
           </div>
         </div>
@@ -290,22 +382,22 @@
           <div class="ft-nav">
             <ul class="ft-ul">
               <li class="ft-li hover-move"><a href="#lu-id">LINE-UP</a></li>
-              <li class="ft-li-child hover-move"><a href="./importcar.html">- 輸入車</a></li>
-              <li class="ft-li-child hover-move"><a href="./pikecar.html">- パイクカー</a></li>
+              <li class="ft-li-child hover-move"><a href="/pages/importcar.html">- 輸入車</a></li>
+              <li class="ft-li-child hover-move"><a href="/pages/pikecar.html">- パイクカー</a></li>
             </ul>
     
             <ul class="ft-ul">
-              <li class="ft-li hover-move"><a href="./support.html">SUPPORT</a></li>
-              <li class="ft-li-child hover-move"><a href="./support.html">- 納車までの流れ</a></li>
-              <li class="ft-li-child hover-move"><a href="./support.html">- 整備・修理</a></li>
-              <li class="ft-li-child hover-move"><a href="./support.html">- アフターメンテナンス</a></li>
-              <li class="ft-li-child hover-move"><a href="./support.html">- 下取り買取</a></li>
+              <li class="ft-li hover-move"><a href="/pages/support.html">SUPPORT</a></li>
+              <li class="ft-li-child hover-move"><a href="/pages/support.html">- 納車までの流れ</a></li>
+              <li class="ft-li-child hover-move"><a href="/pages/support.html">- 整備・修理</a></li>
+              <li class="ft-li-child hover-move"><a href="/pages/support.html">- アフターメンテナンス</a></li>
+              <li class="ft-li-child hover-move"><a href="/pages/support.html">- 下取り買取</a></li>
             </ul>
   
               <ul class="ft-ul">
-                <li class="ft-li hover-move"><a href="./news.html">NEWS</a></li>
-                <li class="ft-li hover-move"><a href="./company.html">COMPANY</a></li>
-                <li class="ft-li hover-move"><a href="./contact.html">CONTACT</a></li>
+                <li class="ft-li hover-move"><a href="/pages/news.html">NEWS</a></li>
+                <li class="ft-li hover-move"><a href="/pages/company.html">COMPANY</a></li>
+                <li class="ft-li hover-move"><a href="/pages/contact.html">CONTACT</a></li>
                 <li class="ft-li hover-move"><a href="">PRIVACY POLICY</a></li>
               </ul>
           </div>
@@ -328,5 +420,6 @@
     <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     <!-- JavaScript load -->
     <script src="/js/main.js"></script>
+    <script src="/js/module/other.js"></script>
   </body>
 </html>
