@@ -2,7 +2,7 @@
 @use "../modules/index" as md;
 
 .hd {
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 1000;
   width: 100%;
@@ -10,7 +10,6 @@
   display: flex;
   align-items: center;
   gap: md.vw-sp(25);
-  position: fixed;
 
   .hd-logo {
     width: md.vw-sp(200);
@@ -37,7 +36,7 @@
       border: none;
       outline: none !important;
       cursor: pointer;
-      width: md.vw-sp(36);
+      width: 36px;
       height: 100%;
 
       span {

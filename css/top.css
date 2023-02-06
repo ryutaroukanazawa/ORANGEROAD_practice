@@ -692,7 +692,7 @@ Font-Set
   }
 }
 .hd {
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 1000;
   width: 100%;
@@ -700,7 +700,6 @@ Font-Set
   display: flex;
   align-items: center;
   gap: 6.6666666667vw;
-  position: fixed;
 }
 .hd .hd-logo {
   width: 53.3333333333vw;
@@ -725,7 +724,7 @@ Font-Set
   border: none;
   outline: none !important;
   cursor: pointer;
-  width: 9.6vw;
+  width: 36px;
   height: 100%;
 }
 .hd .hd-ul .mobile-menu-icon span {

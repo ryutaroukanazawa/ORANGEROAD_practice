@@ -71,19 +71,23 @@ const bd = document.querySelector("body");
 ham.addEventListener("click", function () {
   bd.classList.toggle("no_scroll");
 
+  hamLineChange(); //ハンバーガーメニューのラインカラーを変更
+
   if (ham.classList.contains("active")) {
     hamburgerTl.play();
     fixed.style.backgroundColor = "initial";
     fixed.style.position = "fixed";
+
   } else {
     hamburgerTl.reverse();
     fixed.style.backgroundColor = "white";
-    fixed.style.position = "initial";
+    fixed.style.position = "fixed";
+
   }
 
   ham.classList.toggle("active"); // ハンバーガーメニューにactiveクラスを付け外し
   nav.classList.toggle("active"); // ナビゲーションメニューにactiveクラスを付け外し
-  hamLineChange(); //ハンバーガーメニューのラインカラーを変更
+
 });
 
 /*
